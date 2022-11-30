@@ -3,7 +3,11 @@ This repo implements the Algorithms and data structures discussed in the Algorit
 
 ## PreRequisites 
 ### Random Array Generator 
-### File readers 
+### File readers
+### Selection Sort
+### Bubble Sort
+### Insertion Sort
+### Plotter Library
 ## Part 1 : The basics 
 ### Karatsuba Multiplication
 ### Merge Sort
