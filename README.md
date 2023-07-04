@@ -1,4 +1,4 @@
-# Algorithms-Iluminated-cpp (WORK IN PROGRESS) 
+# Algorithms-Illuminated Python (WORK IN PROGRESS) 
 This repo implements the Algorithms and data structures discussed in the Algorithms Illuminated (Prof Rougharden) in modern cpp
 
 ## PreRequisites 
@@ -8,7 +8,9 @@ This repo implements the Algorithms and data structures discussed in the Algorit
 ### Bubble Sort
 ### Insertion Sort
 ### Plotter Library
-## Part 1 : The basics 
+
+## Part 1: The basics 
+### Recursive Multiplication
 ### Karatsuba Multiplication
 ### Merge Sort
 ### Strassen's Matrix Multiplication
