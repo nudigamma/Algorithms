@@ -1,4 +1,4 @@
-# Algorithms-Illuminated (WORK IN PROGRESS) 
+# Algorithms-Illuminated  CPP (WORK IN PROGRESS) 
 This repo implements the Algorithms and data structures discussed in the Algorithms Illuminated (Prof Rougharden) in modern cpp
 
 ## PreRequisites 
