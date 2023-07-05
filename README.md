@@ -1,5 +1,5 @@
 # Algorithms-Illuminated (WORK IN PROGRESS) 
-This repo implements the Algorithms and data structures discussed in the Algorithms Illuminated (Prof Rougharden) in modern cpp
+This repo implements the Algorithms and data structures discussed in the Algorithms Illuminated (Prof Rougharden) in Python
 
 ## PreRequisites 
 ### Random Array Generator 
