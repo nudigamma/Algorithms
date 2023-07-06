@@ -10,8 +10,8 @@ This repo implements the Algorithms and data structures discussed in the Algorit
 ### Plotter Library
 
 ## Part 1: The basics 
-### Recursive Multiplication
-### Karatsuba Multiplication
+### Recursive Multiplication (Done)
+### Karatsuba Multiplication (Done)
 ### Merge Sort
 ### Strassen's Matrix Multiplication
 ### Closest Pair
