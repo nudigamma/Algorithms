@@ -12,9 +12,7 @@ This is a learning journey for me. Therefore this repo might grow beyond  the sc
 
 ## Sorting
 ### Bubble Sort ( with cocktail party Optimization) 
-### Shell Sort
-### Merge Sort
-### Quick Sort 
+### Insertion Sort 
 
 ## Appendices 
 ### 
