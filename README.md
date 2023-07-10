@@ -1,40 +1,21 @@
-# Algorithms-Illuminated (WORK IN PROGRESS) 
-This repo implements the Algorithms and data structures discussed in the Algorithms Illuminated (Prof Rougharden) in Python
+Algorithms (Work in Progress) 
+This repo implements mainly the Algorithms and data structures discussed in the Algorithms Illuminated (Rougharden, Standford ). Also, it might contain algorithms and data structures from other sources,  Introduction to Algorithms ( Cormen at all  MIT), and Algorithms (Sedgewick, Princeton).
 
-## PreRequisites 
-### Random Array Generator 
-### File readers
-### Selection Sort
-### Bubble Sort
-### Insertion Sort
-### Plotter Library
-
-## Part 1: The basics 
-### Recursive Multiplication (Done)
-### Karatsuba Multiplication (Done)
-### Merge Sort
-### Strassen's Matrix Multiplication
-### Closest Pair
-### QuickSort
-### RSelect, DSelect
-
-## Part 2 : Graph Algorithms and Data Structures
-### Breadth-First Search 
-### Shortest Paths
-### Depth First Search
-### Topological Sort
-### Dijstra's Algorithm
-### Heap Data structure 
-### Search Trees
-### Hash Tables
-### Bloom Filters
+This is a learning journey for me. Therefore this repo might grow beyond  the scope of college Textbooks. 
 
 
-## Part3 : Greedy Algorithms and Dynamic Programming
-### Huffman Greedy Algorithm
-### Prim's Algorithm 
-### Kruska Algorithm
-### Dynamic Programming
-### Optimal binary search trees
+## General 
 
-## Part4 : Algorithms for NP-Hard Problems 
+## Scientific Algorithms 
+### Recursive Multiplication 
+### Karatsuba Multiplication 
+
+## Sorting
+### Bubble Sort ( with cocktail party Optimization) 
+### Insertion Sort 
+
+## Appendices 
+### 
+
+
+ 
