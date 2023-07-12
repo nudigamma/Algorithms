@@ -2,7 +2,7 @@
 ''' Check Karatsuba.pdf for the discussion of the Algorithm''' 
 ''' it works for numbers of the same size and the size can be arbitrary'''
 ''' itoverflows for numbers of size 10**9 and above'''
-
+''' but if you a number of size 10**9 and it is power of 2 you can skip the padding and it will work'''
 import numpy as np
 import unittest
 import time 
