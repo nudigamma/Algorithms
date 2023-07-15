@@ -2,10 +2,16 @@
 import numpy as np
 import unittest
 import sys
-sys.path.insert(0, r'D:\\source\\Algorithms-Iluminated\\part1_ basics')
+# get os type
+import platform
+os_type = platform.system()
+if os_type == 'Windows':
+    sys.path.insert(0, r'D:\\source\\Algorithms-Iluminated\\part1_ basics')
+elif os_type == 'Linux':
+    sys.path.insert(0, r'/mnt/c/source/Algorithms-Iluminated/')
 import Utils.RandomDataGenerator as rnd
 
-def insertionSort(array,verbose=False):
+def insertionSort(array,step=False,verbose=False):
     '''input is an array of integers'''
     n = array.shape[0] # number of elements in the array
     count = 0
@@ -19,6 +25,9 @@ def insertionSort(array,verbose=False):
             count += 1
             if verbose:
                 print(f"Insertion Sort array = {array}")
+            if step:
+                input()
+                print(f"Insertion Sort array = {array}")
         
     return array,count
 
@@ -27,8 +36,8 @@ class TestInsertionSort(unittest.TestCase):
         number_of_tests = 3000
         print(f"Generating {number_of_tests} tests \n")
         for i in range(number_of_tests):
-            array = rnd.generateRandomArray(10,1000,-10000,10000)
-            error = np.sort(array)-insertionSort(array)
+            array = rnd.generateRandomArray(10,11,0,10)
+            error = np.sort(array)-insertionSort(array,step=True)[0]
             assert error.all() == 0
         print(f"Completed {number_of_tests} tests \n")
 
