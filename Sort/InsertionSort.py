@@ -6,7 +6,7 @@ import sys
 import platform
 os_type = platform.system()
 if os_type == 'Windows':
-    sys.path.insert(0, r'D:\\source\\Algorithms-Iluminated\\part1_ basics')
+    sys.path.insert(0, r'D:\\source\\Algorithms\\')
 elif os_type == 'Linux':
     sys.path.insert(0, r'/mnt/c/source/Algorithms-Iluminated/')
 import Utils.RandomDataGenerator as rnd
