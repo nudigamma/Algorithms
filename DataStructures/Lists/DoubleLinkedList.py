@@ -1,5 +1,8 @@
 import math # has -inf and +inf variables defined
+import sys
+sys.path.insert(0, r'D:\\source\\Algorithms\\DataStructures\\Lists\\')
 from Node import DoubleNode
+
 __liscence__ = "MIT"
 __revision__ = "v.01"
 __author__ = "Nadim Farhat nadim.farhat@gmail.com"
@@ -111,7 +114,7 @@ class DoubleLinkedList:
         self.tail = current
         
         return 0
-    def convert_to_array(self):
+    def to_array(self):
         """ returns an array made from the dLinkedList 
             Mostly for testing purposes, this function converts a list
             to an array/or list
@@ -185,11 +188,12 @@ class DoubleLinkedList:
             return - 1
         # Starts at head
         current = self.head
-        print(current.get_item())
+        print(current.get_item(),end=" ")
         # Print all elements until the end
         while(current.get_next() != None):
             current = current.get_next()
-            print(current.get_item())
+            print(current.get_item(),end=" ")
+        print("\n")
         return 0
 
     def reverse_print_list(self):
@@ -522,3 +526,22 @@ class LinkedNumber(DoubleLinkedList):
                 current = current.get_next()
 
         return predecessor_ref
+    
+    def insertionSort(self) -> None:
+        """ Sorts a double linked list using insertion sort """
+        current = self.head.get_next() # start from the second element
+        while current is not None:
+            # start from the second node 
+            temp = current  #save the node
+            is_sorted = False 
+            while not is_sorted:
+                if current.get_previous() is not None and current.item < current.get_previous().item:
+                    current.item, current.previous.item = current.previous.item, current.item
+                    current = current.get_previous()
+                else:
+                    is_sorted = True
+            current = temp.get_next()
+
+
+
+        
