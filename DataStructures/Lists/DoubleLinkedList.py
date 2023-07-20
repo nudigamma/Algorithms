@@ -1,6 +1,7 @@
 import math # has -inf and +inf variables defined
 import sys
 sys.path.insert(0, r'D:\\source\\Algorithms\\DataStructures\\Lists\\')
+sys.path.insert(0,r'/mnt/c/source/Algorithms-Iluminated/DataStructures/Lists/')
 from Node import DoubleNode
 
 __liscence__ = "MIT"

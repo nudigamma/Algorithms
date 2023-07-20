@@ -10,6 +10,7 @@ if os_type == 'Windows':
     sys.path.insert(0, r'D:\\source\\Algorithms\\DataStructures\\')
 elif os_type == 'Linux':
     sys.path.insert(0, r'/mnt/c/source/Algorithms-Iluminated/')
+    sys.path.insert(0, r'/mnt/c/source/Algorithms-Iluminated/DataStructures')
 import Utils.RandomDataGenerator as rnd
 import Lists.DoubleLinkedList as DList
 
@@ -20,10 +21,10 @@ def insertionSort_Array(array,step=False,verbose=False):
     for i in range(1,n):
         key = array[i]
         j = i - 1
-        while j >= 0 and array[j] > key:
-            array[j+1] = array[j]
-            j = j - 1
-            array[j+1] = key
+        while j >= 0 and array[j] > key: #similar to bubble sort propagate the key to the left
+            array[i] = array[j] #swap
+            array[j] = key #swap 
+            j = j - 1 # decrement j
             count += 1
             if verbose:
                 print(f"Insertion Sort array = {array}")
