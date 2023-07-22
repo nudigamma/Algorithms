@@ -40,7 +40,8 @@ class TestInsertionSort(unittest.TestCase):
         number_of_tests = 3000
         print(f"Generating {number_of_tests} tests \n")
         for i in range(number_of_tests):
-            array = rnd.generateRandomArray(10,11,0,10)
+            print(f"Test {i+1} \n")
+            array = rnd.generateRandomArray(10000,100000,0,10)
             error = np.sort(array)-insertionSort_Array(array)[0]
             assert error.all() == 0
         print(f"Completed {number_of_tests} tests \n")
@@ -49,7 +50,7 @@ class TestInsertionSort(unittest.TestCase):
         print(f"Generating {number_of_tests} tests \n")
         for i in range(number_of_tests):
             dlist = DList.LinkedNumber()
-            array = rnd.generateRandomArray(10,11,0,10)
+            array = rnd.generateRandomArray(1,20,0,10)
             for element in array:
                 dlist.insert_at_beginning(element)
             dlist.insertionSort()
