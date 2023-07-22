@@ -22,28 +22,28 @@ def mergeSort(array):
     if array.shape[0] == 1:
         return array
     else:
-        
         a = mergeSort(array[0:array.shape[0]//2])
-    
         b = mergeSort(array[array.shape[0]//2:])
         i = 0
         j = 0
         k = 0
-        for k in range(c.shape[0]):
-            if (i < a.shape[0]) and (j < b.shape[0]):
+        
+        while (i < a.shape[0]) and (j < b.shape[0]):
                 if a[i] < b[j]:
                     c[k] = a[i]
                     i += 1
                 else: 
                     c[k] = b[j] 
                     j += 1
-            elif i < a.shape[0]:
+                k += 1
+        while i < a.shape[0]:
                 c[k] = a[i]
                 i += 1
-            elif j < b.shape[0]:
+                k += 1
+        while j < b.shape[0]:
                 c[k] = b[j]
                 j += 1
-                
+                k += 1
         return c
     
 
