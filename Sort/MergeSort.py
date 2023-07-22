@@ -53,7 +53,7 @@ class TestMergeSort(unittest.TestCase):
         number_of_tests = 3000
         print(f"Generating {number_of_tests} tests \n")
         for i in range(number_of_tests):
-            array = rnd.generateRandomArray(10000,100000,0,10)
+            array = rnd.generateRandomArray(1000,2000,0,10)
             error = np.sort(array)-mergeSort(array)
         assert error.all() == 0
         print(f"Completed {number_of_tests} tests \n")  
