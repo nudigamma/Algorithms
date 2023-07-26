@@ -15,8 +15,6 @@ elif os_type == 'Linux':
 
 import Utils.RandomDataGenerator as rnd
 
-def merge(a,b):
-    pass
 def mergeSort(array):
     c = np.zeros(array.shape[0])
     if array.shape[0] == 1:
