@@ -7,17 +7,18 @@ import sys
 import platform
 os_type = platform.system()
 if os_type == 'Windows':
-    sys.path.insert(0, r'D:\\source\\Algorithms\\')
-    sys.path.insert(0, r'D:\\source\\Algorithms\\DataStructures\\')
+    sys.path.insert(0, r'c:\\source\\Algorithms\\')
+    sys.path.insert(0, r'c:\\source\\Algorithms\\DataStructures\\')
 elif os_type == 'Linux':
     sys.path.insert(0, r'/mnt/d/source/Algorithms/')
     sys.path.insert(0, r'/mnt/d/source/Algorithms/DataStructures')  
 
-import Utils.RandomDataGenerator as rnd
+#import Utils.RandomDataGenerator as rnd
 
 
 def SecondLargest(array):
-
+    if array.shape[0] == 1:
+        return np.array([array[0],np.NINF])
     if array.shape[0] == 2:
         if array[0] > array[1]:
             return array
@@ -55,7 +56,7 @@ class TestMergeSort(unittest.TestCase):
         number_of_tests = 3000
         print(f"Generating {number_of_tests} tests \n")
         for i in range(number_of_tests):
-            array = np.random.randint(0,10,64)
+            array = np.random.randint(0,10,10)
             error = np.sort(array)[-2] - SecondLargest(array)[1]
         assert error.all() == 0
         print(f"Completed {number_of_tests} tests \n")  
