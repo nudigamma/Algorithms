@@ -8,9 +8,9 @@ This is a learning journey for me. Therefore this repo might grow beyond  the sc
 
 ## Scientific Algorithms 
 ### Recursive Multiplication
-[Implemented Here](Scientific/RecursiveIntegerMultiplication)
+[Implemented Here](RecursiveIntegerMultiplication)
 ### Karatsuba Multiplication
-[Implemented Here](Scientific/RecursiveIntegerMultiplication)
+[Implemented Here](RecursiveIntegerMultiplication)
 
 ## Sorting
 ### Bubble Sort ( with cocktail party Optimization) 
