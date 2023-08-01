@@ -1,10 +1,14 @@
 
 import QuickFindUF as qf
+import sys
 
 def main():
-
-
-
+    with open('tinyUF.txt') as f:
+        n = int(f.readline())
+        pairs = []
+        for line in f:
+            pairs.append([int(x) for x in line.split()])
+    
     uf = qf.QuickFindUF(n)
     print("Initial List")
     uf.print()
