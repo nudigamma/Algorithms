@@ -38,6 +38,9 @@ class QuickFindUF:
         self.validate(p)
         return self._id[p]
     
+    def ids(self):
+        return self._id
+    
     def connected(self, p, q):
         self.validate(p)
         self.validate(q)
@@ -54,4 +57,27 @@ class QuickFindUF:
                     self._id[i] = qId     
                     self._count -= self._count
                
+
+class QuickUnion(QuickFindUF):
+    def __init__(self,n):
+        super().__init__(n)
+    def print(self):
+        super().print()
+    def count(self):
+        return super().count()
+    def validate(self, p):
+        super().validate(p)
+    def connected(self, p, q):
+        return super().connected(p, q)
+    def find (self, p):
+        while(p != self._id[p]):
+            p  = self._id[p]
+        return p
+    def union(self, p, q):
+        pId = self.find(p)
+        qId = self.find(q)
+        if pId != qId:
+            self._id[pId] = qId
+            self._count -= 1
+            
 
