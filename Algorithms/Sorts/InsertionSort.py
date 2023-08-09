@@ -14,27 +14,6 @@ elif os_type == 'Linux':
 import Utils.RandomDataGenerator as rnd
 import Lists.DoubleLinkedList as DList
 
-def insertionSort_Array(array,step=False,verbose=False):
-    '''input is an array of integers'''
-    n = array.shape[0] # number of elements in the array
-    count = 0
-    for i in range(1,n):
-        key = array[i]
-        j = i - 1
-        while j >= 0 and array[j] > key: #similar to bubble sort propagate the key to the left
-            array[i] = array[j] #swap
-            array[j] = key #swap 
-            j = j - 1 # decrement j
-            count += 1
-            if verbose:
-                print(f"Insertion Sort array = {array}")
-            if step:
-                input()
-                print(f"Insertion Sort array = {array}")
-        
-    return array,count
-
-
 class TestInsertionSort(unittest.TestCase):
     def test_insertion_sort_array(self):
         number_of_tests = 3000
