@@ -47,7 +47,7 @@ def two_sum_brute_force(array):
 def two_sum_quick(array):
     pass
 
-def mesure_time(callback,array):
+def measure_time(callback,array):
     start_time = time.time()
     callback(array)
     end_time = time.time()

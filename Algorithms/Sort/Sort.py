@@ -66,8 +66,8 @@ def MergeSort(array):
     else:
         # general case
         # we split the array in two and recursively call mergeSort
-        right = mergeSort(array[0:array.shape[0]//2])
-        left = mergeSort(array[array.shape[0]//2:])
+        right = MergeSort(array[0:array.shape[0]//2])
+        left = MergeSort(array[array.shape[0]//2:])
         i = 0
         j = 0
         k = 0
