@@ -4,15 +4,16 @@ This repo implements mainly the Algorithms and data structures discussed in Algo
 This is a learning journey for me . The algorithms and data structures  below are implemented. 
 
 ## Algorithms 
-## Sort
-### Bubble Sort ( with cocktail party Optimization) 
-### Insertion Sort 
-### Merge Sort
+### Sort
+#### Bubble Sort ( with cocktail party Optimization) 
+#### Insertion Sort 
+#### Merge Sort
 
-## Search
-### Binary Search 
-### Second Largest
+### Search
+#### Binary Search 
+#### Second Largest
 
+### Misc
 #### Recursive Multiplication
 [Implemented Here](RecursiveIntegerMultiplication)
 #### Karatsuba Multiplication
