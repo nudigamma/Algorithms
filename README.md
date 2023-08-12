@@ -14,9 +14,8 @@ This is a learning journey for me . The algorithms and data structures  below ar
 #### Second Largest
 
 ### Misc
-#### Recursive Multiplication
-[Implemented Here](RecursiveIntegerMultiplication)
-#### Karatsuba Multiplication
+#### [Recursive Multiplication](Algorithms/RecursiveIntegerMultiplication)
+#### Karatsuba Multiplication(Algorithms/RecursiveIntegerMultiplication)
 [Implemented Here](RecursiveIntegerMultiplication)
 #### ThreeSum
 Both brute force and Quick version (N^2Log(N))
