@@ -1,20 +1,28 @@
 # Algorithms (Active and Work in Progress) 
-This repo implements mainly the Algorithms and data structures discussed in the Algorithms Illuminated (Rougharden, Standford ). Also, it might contain algorithms and data structures from other sources,  Introduction to Algorithms ( Cormen at all  MIT), and Algorithms (Sedgewick, Princeton).
+This repo implements mainly the Algorithms and data structures discussed in Algorithms Illuminated (Rougharden, Standford ), Introduction to Algorithms ( Cormen at all  MIT), and Algorithms (Sedgewick, Princeton).
 
-This is a learning journey for me. Therefore this repo might grow beyond  the scope of college Textbooks. 
+This is a learning journey for me . The algorithms and data structures  below are implemented. 
 
-
-## General 
-
-## Scientific Algorithms 
-### Recursive Multiplication
-[Implemented Here](RecursiveIntegerMultiplication)
-### Karatsuba Multiplication
-[Implemented Here](RecursiveIntegerMultiplication)
-
-## Sorting
+## Algorithms 
+## Sort
 ### Bubble Sort ( with cocktail party Optimization) 
 ### Insertion Sort 
+### Merge Sort
+
+## Search
+### Binary Search 
+### Second Largest
+
+#### Recursive Multiplication
+[Implemented Here](RecursiveIntegerMultiplication)
+#### Karatsuba Multiplication
+[Implemented Here](RecursiveIntegerMultiplication)
+#### ThreeSum
+Both brute force and Quick version (N^2Log(N))
+
+## DataStructures
+### Simple Linked List
+### Double Linked List 
 
 ## Appendices 
 ### 
