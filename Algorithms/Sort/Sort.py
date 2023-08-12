@@ -2,6 +2,9 @@ import numpy as np
 
 def InsertionSort(array):
     '''input is an array of integers'''
+    '''output is a sorted array of integers'''
+    '''this function implements the insertion sort algorithm'''
+    '''As presented in the book, Introduction to Algorithms by Cormen et al.'''
     n = array.shape[0] # number of elements in the array
 
     for i in range(1,n):
@@ -11,15 +14,13 @@ def InsertionSort(array):
             array[i] = array[j] #swap
             array[j] = key #swap 
             j = j - 1 # decrement j
-
-           
-        
     return array
 
 
 
 def swapelement(i,j):
     '''swaps the ith and jth element of the array'''
+    '''Helper function for bubble sort below'''
     temp = i
     i = j
     j = temp
@@ -27,6 +28,8 @@ def swapelement(i,j):
 
 def BubbleSort(array,verbose=False):
     '''input is an array of integers'''
+    '''output is a sorted array of integers'''
+    '''this function implements the bubble sort algorithm'''
     n = array.shape[0] # number of elements in the array
     swapped = True
     count = 0 
@@ -51,15 +54,14 @@ def BubbleSort(array,verbose=False):
         start = start + 1
         if verbose:
             print(f"Bubble Sort array = {array}")    
-            
+
     return array,count
 
 def MergeSort(array):
     '''This function implements the merge sort algorithm
     Input: numpy array of numbers
     Output: sorted numpy array of numbers
-    '''
-
+    as presented in the book, Algorithms Illuminated by Tim Roughgarden'''
     c = np.zeros(array.shape[0])
     # base case
     if array.shape[0] == 1:

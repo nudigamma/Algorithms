@@ -29,7 +29,6 @@ def SecondLargest(array):
             array[1] = array[0]
             array[0] = temp
             return array
-    
     else:
         left  = SecondLargest(array[0:array.shape[0]//2])
         right  = SecondLargest(array[array.shape[0]//2:])
@@ -51,8 +50,6 @@ def SecondLargest(array):
         
         return np.array([largest,secondLargest])
     
-
-
 def BinarySearch(array, key):
     '''perform binary search on a sorted array'''
     '''array is a numpy array of integers'''
