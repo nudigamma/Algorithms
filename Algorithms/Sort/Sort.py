@@ -51,6 +51,7 @@ def BubbleSort(array,verbose=False):
         start = start + 1
         if verbose:
             print(f"Bubble Sort array = {array}")    
+            
     return array,count
 
 def MergeSort(array):
