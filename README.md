@@ -5,24 +5,23 @@ This is a learning journey for me . The algorithms and data structures  below ar
 
 ## Algorithms 
 ### Sort
-#### Bubble Sort ( with cocktail party Optimization) 
-#### Insertion Sort 
-#### Merge Sort
+[Bubble Sort ( with cocktail party Optimization)](Algorithms/Sort)  
+[Insertion Sort](Algorithms/Sort/Sort.py)    
+[Merge Sort](Algorithms/Sort)    
 
 ### Search
-#### Binary Search 
-#### Second Largest
+[Binary Search](Algorithms/Search)
+[Second Largest](Algorithms/Search)  
 
 ### Misc
-#### [Recursive Multiplication](Algorithms/RecursiveIntegerMultiplication)
-#### [Karatsuba Multiplication](Algorithms/RecursiveIntegerMultiplication)
+[Recursive Multiplication](Algorithms/RecursiveIntegerMultiplication)  
+[Karatsuba Multiplication](Algorithms/RecursiveIntegerMultiplication)  
+[ThreeSum](Algorithms/NSum/ThreeSum.py)
 
-#### ThreeSum
-Both brute force and Quick version (N^2Log(N))
 
-## DataStructures
-### Simple Linked List
-### Double Linked List 
+## Data Structures
+[Simple Linked List](DataStructures/List/LinkedList.py)  
+[Double Linked List](DataStructures/Lists/DoubeLinkedList.py)
 
 ## Appendices 
 ### 
