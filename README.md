@@ -15,8 +15,8 @@ This is a learning journey for me . The algorithms and data structures  below ar
 
 ### Misc
 #### [Recursive Multiplication](Algorithms/RecursiveIntegerMultiplication)
-#### Karatsuba Multiplication(Algorithms/RecursiveIntegerMultiplication)
-[Implemented Here](RecursiveIntegerMultiplication)
+#### [Karatsuba Multiplication](Algorithms/RecursiveIntegerMultiplication)
+
 #### ThreeSum
 Both brute force and Quick version (N^2Log(N))
 
