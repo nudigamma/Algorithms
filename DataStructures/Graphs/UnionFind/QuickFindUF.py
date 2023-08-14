@@ -16,7 +16,7 @@ class QuickFindUF:
                 print("n cannot be negative")
 
         self._id = []
-        self._count =  n
+        self._count =  n # we n nodes that are not connected 
         for i in range(0,self._count):
             self._id.append(i)
 
@@ -27,26 +27,32 @@ class QuickFindUF:
         return self._count
     
     def validate(self, p):
+        '''validate that p is a valid index'''
         length = len(self._id)
         try:
             if (p < 0 or p >=  length):
                 raise ValueError
         except ValueError:
             print("index " + p + " is not between 0 and " + (length-1))
+            return False
 
     def find(self, p):
-        self.validate(p)
-        return self._id[p]
-    
+        '''component identifier for p (0 to n-1)'''
+        if self.validate(p):
+            return self._id[p]
+        return None
+        
     def ids(self):
         return self._id
     
     def connected(self, p, q):
+        '''return true if p and q are in the same component'''
         self.validate(p)
         self.validate(q)
         return self._id[p] == self._id[q]
     
     def union(self, p, q):
+        '''add connection between p and q'''
         self.validate(p)
         self.validate(q)
         pId = self._id[p]
@@ -56,6 +62,7 @@ class QuickFindUF:
                 if self._id[i] == pId:
                     self._id[i] = qId     
                     self._count -= self._count
+               
                
 
 class QuickUnion(QuickFindUF):
