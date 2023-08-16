@@ -3,9 +3,10 @@
    
    this class is implemented using the eager approach   '''
 
+from abc import ABC, abstractmethod
 
 
-class UnionFind:
+class UnionFind(metaClass=ABC):
     '''this class is used to solve the dynamic connectivity problem
        in this class the nodes contain the integer id of the component to which they belong, this id
        is the same for all nodes in the same component and the componenents is represented by a node'''
@@ -20,23 +21,6 @@ class UnionFind:
     def connected(self,p,q)-> bool:
         '''returns true if p and q belong to the same component'''
         return self.find(p) == self.find(q)
-
-    def find(self,p) -> int:
-        '''returns an the integer id of the component to which p belong'''
-        if self.validate(p):
-            return self._id[p]
-        return None
-    
-
-    def union(self,p,q):
-        ''' merges two nodes if they belong to different components '''
-        pId = self.find(p)
-        qId = self.find(q)
-        if not qId == pId:
-            for node in range(0,n):
-                if self._id[node] == pId:
-                    self._id[node] = qId
-                    self._count -= 1    
     def validate(self,p):
         '''validate that p is a valid index'''
         length = len(self._id)
@@ -47,28 +31,46 @@ class UnionFind:
             print("index " + p + " is not between 0 and " + (length-1))
             return False
         return True
+    
+    def print(self):
+        print(f"This network has {self._count} components")
+        print("nodes",end=" ")
+        [print(f"{i} \n",end=" ") for i in range(0,len(self._id))]
+        print("\n")
+        print("components",end=" ")
+        [print(f"{self._id[i]}\n",end=" ") for i in range(0,len(self._id))]
+
+    @abstractmethod
+    def find(self,p) -> int: #we postpone the implementation of this method to the different subclasses
+        pass
+    @abstractmethod
+    def union(self,p,q): #we postpone the implementation of this method to the different subclasses
+        pass
+       
 
 
-class QuickUnion(UnionFind):
+class QuickFind(UnionFind):
+    ''' this method is called quick find because the find operation is very fast, it is O(1)'''
+
     def __init__(self,n):
         super().__init__(n)
-    def print(self):
-        super().print()
-    def count(self):
-        return super().count()
-    def validate(self, p):
-        super().validate(p)
-    def connected(self, p, q):
-        return super().connected(p, q)
-    def find (self, p):
-        while(p != self._id[p]):
-            p  = self._id[p]
-        return p
+ 
+    def find (self, p) -> int:
+        '''returns the component to which p belongs'''
+        return self._id[p]
+    
+    def connect(self,map):
+        '''connects the nodes in the map'''
+        for node1,node2 in map:
+            if not self.connected(node1,node2):
+                self.union(node1,node2)
+        
     def union(self, p, q):
         pId = self.find(p)
         qId = self.find(q)
         if pId != qId:
-            self._id[pId] = qId
+            for i in range(0,len(self._id)):
+                if self._id[i] == pId:
+                    self._id[i] = qId
             self._count -= 1
-            
 
