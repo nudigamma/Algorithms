@@ -9,5 +9,3 @@ connection = zip(array1 , array2)
 def fill(connection):
     for node1,node2 in connection:
         print(node1,node2)
-
-fill(connection)

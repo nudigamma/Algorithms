@@ -6,7 +6,7 @@
 from abc import ABC, abstractmethod
 
 
-class UnionFind(metaClass=ABC):
+class UnionFind():
     '''this class is used to solve the dynamic connectivity problem
        in this class the nodes contain the integer id of the component to which they belong, this id
        is the same for all nodes in the same component and the componenents is represented by a node'''
@@ -34,11 +34,11 @@ class UnionFind(metaClass=ABC):
     
     def print(self):
         print(f"This network has {self._count} components")
-        print("nodes",end=" ")
-        [print(f"{i} \n",end=" ") for i in range(0,len(self._id))]
+        print("node",end=" ")
+        [print(f"{i}",end=" ") for i in range(0,len(self._id))]
         print("\n")
-        print("components",end=" ")
-        [print(f"{self._id[i]}\n",end=" ") for i in range(0,len(self._id))]
+        print("comp",end=" ")
+        [print(f"{self._id[i]}",end=" ") for i in range(0,len(self._id))]
 
     @abstractmethod
     def find(self,p) -> int: #we postpone the implementation of this method to the different subclasses
@@ -66,8 +66,8 @@ class QuickFind(UnionFind):
                 self.union(node1,node2)
         
     def union(self, p, q):
-        pId = self.find(p)
-        qId = self.find(q)
+        pId = self.find(p) # 3
+        qId = self.find(q) # 8
         if pId != qId:
             for i in range(0,len(self._id)):
                 if self._id[i] == pId:
