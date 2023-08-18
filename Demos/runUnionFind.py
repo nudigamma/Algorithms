@@ -1,3 +1,4 @@
+'''this demo runs the UnionFind class and prints the results'''
 
 import sys
 import unittest
@@ -12,11 +13,9 @@ test_validation_dir = os.path.join(main_data_dir,'TestsAndValidations')
 
 def main():
 
-
     with open(os.path.join(main_data_dir,'tinyUF.txt')) as f:
         lines = f.readlines()
     connection_map = [(int(line[0]),int(line[2])) for line in lines[1:]]
-    
     QF = QuickFind(len(connection_map))
     QF.connect(connection_map)
     QF.print()  
