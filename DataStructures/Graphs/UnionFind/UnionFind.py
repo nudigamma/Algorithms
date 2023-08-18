@@ -35,10 +35,10 @@ class UnionFind():
     def print(self):
         print(f"This network has {self._count} components")
         print("node",end=" ")
-        [print(f"{i}",end=" ") for i in range(0,len(self._id))]
+        [print(f"{i}",end=" ") for i in range(0,len(self._id)-1)]
         print("\n")
         print("comp",end=" ")
-        [print(f"{self._id[i]}",end=" ") for i in range(0,len(self._id))]
+        [print(f"{self._id[i]}",end=" ") for i in range(0,len(self._id)-1)]
 
     @abstractmethod
     def find(self,p) -> int: #we postpone the implementation of this method to the different subclasses
@@ -71,7 +71,8 @@ class QuickFind(UnionFind):
                     self._id[i] = qId
             self._count -= 1
 
-class QuickUnion(UnionFind):
+class QuickUnion(QuickFind):
+    ''' this method is called quick union because the union operation is very fast, it is O(1)'''
     
     def find(self,p) -> int:
         '''returns the component to which p belongs'''
@@ -86,4 +87,23 @@ class QuickUnion(UnionFind):
         if pRoot != qRoot:
             self._id[pRoot] = qRoot
             self._count -= 1
-        
+
+class WeightedQuickUnion(QuickUnion):
+    def __init__(self,n):
+        super().__init__(n)
+        self._sizes = []
+        for i in range(0,n):
+            self._sizes.append(1)
+    def union(self,p,q):
+        '''connects the nodes in the map'''
+        pRoot = self.find(p)
+        qRoot = self.find(q)
+        if pRoot != qRoot:
+           if self._sizes[pRoot] < self._sizes[qRoot]:
+              self._id[pRoot] = qRoot
+              self._sizes[qRoot] += self._sizes[pRoot]
+           else:
+              self._id[qRoot] = pRoot
+              self._sizes[pRoot] += self._sizes[qRoot]
+           self._count -= 1
+           
