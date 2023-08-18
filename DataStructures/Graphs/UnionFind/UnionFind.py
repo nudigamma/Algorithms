@@ -51,9 +51,6 @@ class UnionFind():
 
 class QuickFind(UnionFind):
     ''' this method is called quick find because the find operation is very fast, it is O(1)'''
-
-    def __init__(self,n):
-        super().__init__(n)
  
     def find (self, p) -> int:
         '''returns the component to which p belongs'''
@@ -74,3 +71,19 @@ class QuickFind(UnionFind):
                     self._id[i] = qId
             self._count -= 1
 
+class QuickUnion(UnionFind):
+    
+    def find(self,p) -> int:
+        '''returns the component to which p belongs'''
+        while p != self._id[p]:
+            p = self._id[p]
+        return p
+
+    def union(self,p,q):
+        '''connects the nodes in the map'''
+        pRoot = self.find(p)
+        qRoot = self.find(q)
+        if pRoot != qRoot:
+            self._id[pRoot] = qRoot
+            self._count -= 1
+        
