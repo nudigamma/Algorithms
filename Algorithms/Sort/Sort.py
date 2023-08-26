@@ -57,30 +57,31 @@ def BubbleSort(array,verbose=False):
     return array,count
 
 # Merge 
-def Merge(right,left,merged):
+def Merge(left,right,merged):
     i = 0
     j = 0
     k = 0
     # while we are within the limits of the arrays
     # we merge the arrays
-    while (i < right.shape[0]) and (j < left.shape[0]):
-        if right[i] < left[j]:
-            merged[k] = right[i]
+    while (i < left.shape[0]) and (j < right.shape[0]):
+        if left[i] < right[j]:
+            merged[k] = left[i]
             i += 1
+            k += 1
         else: 
-            merged[k] = left[j] 
+            merged[k] = right[j] 
             j += 1
             k += 1
     # we exited the above loop due to one of the arrays being exhausted
     # we now copy the remaining elements from the other array
     # if we are still within the limits of the right array we copy the remaining elements
-    while i < right.shape[0]:
-        merged[k] = right[i]
+    while i < left.shape[0]:
+        merged[k] = left[i]
         i += 1
         k += 1
     # if we are still within the limits of the left array we copy the remaining elements
-    while j < left.shape[0]:
-        merged[k] = left[j]
+    while j < right.shape[0]:
+        merged[k] = right[j]
         j += 1
         k += 1
         # we return the merged array
@@ -100,6 +101,6 @@ def MergeSort(array):
         # we split the array in two and recursively call mergeSort
         left =  MergeSort(array[array.shape[0]//2:])
         right = MergeSort(array[0:array.shape[0]//2])
-        merged = Merge(right,left,merged)
+        merged = Merge(left,right,merged)
         return merged
     
