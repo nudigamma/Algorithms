@@ -29,11 +29,12 @@ def Merge_and_CountSplit_Inv(left,right):
     while (i < left.shape[0]) and (j < right.shape[0]):
         if left[i] < right[j]:
             merged[k] = left[i]
-            i += 1        
+            i += 1
+            splitInv += right.shape[0] - j
         else: 
             merged[k] = right[j] 
             j += 1
-            splitInv += left.shape[0] - i
+            
         k+=1
     # we exited the above loop due to one of the arrays being exhausted
     # we now copy the remaining elements from the other array

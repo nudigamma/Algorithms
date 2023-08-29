@@ -29,7 +29,7 @@ class TestMergeSort(unittest.TestCase):
 
 if __name__ == '__main__':
     #unittest.main()
-    array = np.array([1,2,3,4,5,6])
+    array = np.array([6,5,4,3,2,1])
     output = np.zeros(array.shape[0])
     print(f"array = {array}")
     print(f"bruteForeCountInversion(array) = {bruteForeCountInversion(array)}")
