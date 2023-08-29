@@ -66,12 +66,11 @@ def Merge(left,right,merged):
     while (i < left.shape[0]) and (j < right.shape[0]):
         if left[i] < right[j]:
             merged[k] = left[i]
-            i += 1
-            k += 1
+            i += 1        
         else: 
             merged[k] = right[j] 
             j += 1
-            k += 1
+        k+=1
     # we exited the above loop due to one of the arrays being exhausted
     # we now copy the remaining elements from the other array
     # if we are still within the limits of the right array we copy the remaining elements
@@ -87,11 +86,14 @@ def Merge(left,right,merged):
         # we return the merged array
     return merged 
 
+
+
 def MergeSort(array):
     '''This function implements the merge sort algorithm
     Input: numpy array of numbers
     Output: sorted numpy array of numbers
     as presented in the book, Algorithms Illuminated by Tim Roughgarden'''
+    
     merged = np.zeros(array.shape[0])
     # base case
     if array.shape[0] == 1:
@@ -101,6 +103,6 @@ def MergeSort(array):
         # we split the array in two and recursively call mergeSort
         left =  MergeSort(array[array.shape[0]//2:])
         right = MergeSort(array[0:array.shape[0]//2])
-        merged = Merge(left,right,merged)
+        Merge(left,right,merged)
         return merged
     
