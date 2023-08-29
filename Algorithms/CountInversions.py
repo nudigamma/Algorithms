@@ -30,10 +30,11 @@ def Merge_and_CountSplit_Inv(left,right):
         if left[i] < right[j]:
             merged[k] = left[i]
             i += 1
-            splitInv += right.shape[0] - j
+            
         else: 
             merged[k] = right[j] 
             j += 1
+            splitInv += left.shape[0] - i
             
         k+=1
     # we exited the above loop due to one of the arrays being exhausted
@@ -66,7 +67,8 @@ def Sort_And_CountInV(array):
     else:
         # general case
         # we split the array in two and recursively call mergeSort
-        left,leftInv =  Sort_And_CountInV(array[array.shape[0]//2:])
-        right,rightInv = Sort_And_CountInV(array[0:array.shape[0]//2])
+        left,leftInv = Sort_And_CountInV(array[0:array.shape[0]//2]) 
+        right,rightInv = Sort_And_CountInV(array[array.shape[0]//2:])
+        
         merged, splitInv = Merge_and_CountSplit_Inv(left,right)
         return merged, leftInv + rightInv + splitInv
