@@ -1,7 +1,7 @@
 # Algorithms (Active and Work in Progress) 
 This repo implements mainly the Algorithms and data structures discussed in Algorithms Illuminated (Rougharden, Standford ), Introduction to Algorithms ( Cormen at all  MIT), and Algorithms (Sedgewick, Princeton).
 
-This is a learning journey for me . The algorithms and data structures  below are implemented. 
+This is a learning journey for me. The algorithms and data structures below are implemented. 
 
 ## Algorithms 
 ### Sort
@@ -23,7 +23,7 @@ This is a learning journey for me . The algorithms and data structures  below ar
 ## Data Structures
 [Simple Linked List](DataStructures/List/LinkedList.py)  
 [Double Linked List](DataStructures/Lists/DoubeLinkedList.py) 
-[Union Find] (DataStructures/Graphs/UnionFind/UnionFind.py)
+[Union Find](DataStructures/Graphs/UnionFind/UnionFind.py)
 ## Appendices 
 ### 
 
