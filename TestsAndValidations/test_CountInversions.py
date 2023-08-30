@@ -15,7 +15,7 @@ import platform
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 print(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import Utils.RandomDataGenerator as rnd
-from Algorithms.CountInversions import bruteForeCountInversion, Sort_And_CountInV
+from Algorithms.CountInversions.CountInversions import bruteForeCountInversion, Sort_And_CountInV
 
 class TestCountInversion(unittest.TestCase):
     def test_count_inversion(self):
