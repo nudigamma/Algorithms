@@ -22,7 +22,7 @@ This is a learning journey for me. The algorithms and data structures below are 
 
 ## Data Structures
 [Simple Linked List](DataStructures/List/LinkedList.py)  
-[Double Linked List](DataStructures/Lists/DoubeLinkedList.py) 
+[Double Linked List](DataStructures/Lists/DoubeLinkedList.py)   
 [Union Find](DataStructures/Graphs/UnionFind/UnionFind.py)
 ## Appendices 
 ### 
