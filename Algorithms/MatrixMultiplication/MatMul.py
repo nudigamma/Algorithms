@@ -21,6 +21,45 @@ def MatMul(A,B):
     return C
 
 
+def RecMatMult(X,Y):
+    if X.shape[0] == 1 :
+        return X[0][0] * Y[0][0]
+    
+    Z = np.zeros((X.shape[0],Y.shape[1]))
+    # upper left 
+    A = X[:X.shape[0]//2,:X.shape[1]//2]
+    # upper Right
+    B = X[:X.shape[0]//2,X.shape[1]//2:]
+    # lower left 
+    C = X[X.shape[0]//2:,:X.shape[1]//2]
+    # lower right 
+    D = X[:X.shape[0]//2,:X.shape[1]//2:]
+
+    E = Y[:Y.shape[0]//2,:Y.shape[1]//2]
+    # upper light
+    F = Y[:Y.shape[0]//2,Y.shape[1]//2:]
+    # lower left 
+    G = Y[Y.shape[0]//2:,:Y.shape[1]//2]
+    # lower right 
+    H = Y[:Y.shape[0]//2,:Y.shape[1]//2:]
+
+    AE = RecMatMult(A,E)
+    BG = RecMatMult(B,G)
+    AF = RecMatMult(A,F)
+    BH = RecMatMult(B,H)
+    CE = RecMatMult(C,E)
+    DG = RecMatMult(D,G)
+    CF = RecMatMult(C,F)
+    DH = RecMatMult(D,H)
+
+    Z[:X.shape[0]//2,:Y.shape[1]//2] = AE + BG
+    Z[:X.shape[0]//2,Y.shape[1]//2:] = AF +BH
+    Z[X.shape[0]//2:,:Y.shape[1]//2] = CE + DG
+    Z[:X.shape[0]//2,:X.shape[1]//2:] = CF + DH
+
+
+
+    return Z 
 # now test the VecDot function
 a = np.array([1,2,3])
 b = np.array([4,5,6])
@@ -33,8 +72,9 @@ A = np.array([[1,2],[3,4]])
 B = np.array([[5,6],[7,8]])
 print(np.matmul(A,B))
 print(MatMul(A,B))
+print(RecMatMult(A,B))
 # now test the MatMul function on non square matrices 2x3 and 3x2
 A = np.array([[1,2,3],[4,5,6]])
 B = np.array([[7,8],[9,10],[11,12]])
-print(np.matmul(A,B))
-print(MatMul(A,B))
+#print(np.matmul(A,B))
+#print(MatMul(A,B))
