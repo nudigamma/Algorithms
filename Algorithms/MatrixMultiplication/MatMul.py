@@ -60,6 +60,43 @@ def RecMatMult(X,Y):
 a = np.array([1,2,3])
 b = np.array([4,5,6])
 
+
+def strassenRecMat(X,Y):
+    if X.shape[0] == 1 :
+        return X[0][0] * Y[0][0]
+    Z = np.zeros((X.shape[0],Y.shape[1]))
+    # upper left 
+    A = X[:X.shape[0]//2,:X.shape[1]//2]
+    # upper Right
+    B = X[:X.shape[0]//2,X.shape[1]//2:]
+    # lower left 
+    C = X[X.shape[0]//2:,:X.shape[1]//2]
+    # lower right 
+    D = X[X.shape[0]//2:,X.shape[1]//2:]
+
+    E = Y[:Y.shape[0]//2,:Y.shape[1]//2]
+    # upper light
+    F = Y[:Y.shape[0]//2,Y.shape[1]//2:]
+    # lower left 
+    G = Y[Y.shape[0]//2:,:Y.shape[1]//2]
+    # lower right 
+    H = Y[Y.shape[0]//2:,Y.shape[1]//2:]
+
+    P1 = strassenRecMat(A,F-H)
+    P2 = strassenRecMat(A+B,H)
+    P3 = strassenRecMat(C+D,E)
+    P4 = strassenRecMat(D,G-E)
+    P5 = strassenRecMat(A+D,E+H)
+    P6 = strassenRecMat(B-D,G+H)
+    P7 = strassenRecMat(A-C,E+F)
+
+    Z[:X.shape[0]//2,:Y.shape[1]//2] =  P5 + P4 - P2 + P6
+    Z[:X.shape[0]//2,Y.shape[1]//2:] =  P1 + P2
+    Z[X.shape[0]//2:,:Y.shape[1]//2] =  P3 + P4
+    Z[X.shape[0]//2:,Y.shape[1]//2:] = P1 + P5 - P3 - P7
+
+    return Z
+
 assert VecDot(a,b) == np.dot(a,b)
 
 # now test the MatMul function on square matrices 2x2
@@ -75,3 +112,5 @@ X = np.float32(np.random.randint(0,10,(16,16)))
 Y = np.float32(np.random.randint(0,10,(16,16)))
 # compare element wise matrix members and assert that they are equal
 assert np.allclose(np.matmul(X,Y),MatMul(X,Y))
+assert np.allclose(np.matmul(X,Y),RecMatMult(X,Y))
+assert np.allclose(np.matmul(X,Y),strassenRecMat(X,Y))
