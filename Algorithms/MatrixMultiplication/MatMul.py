@@ -33,7 +33,7 @@ def RecMatMult(X,Y):
     # lower left 
     C = X[X.shape[0]//2:,:X.shape[1]//2]
     # lower right 
-    D = X[:X.shape[0]//2,:X.shape[1]//2:]
+    D = X[X.shape[0]//2:,X.shape[1]//2:]
 
     E = Y[:Y.shape[0]//2,:Y.shape[1]//2]
     # upper light
@@ -41,7 +41,7 @@ def RecMatMult(X,Y):
     # lower left 
     G = Y[Y.shape[0]//2:,:Y.shape[1]//2]
     # lower right 
-    H = Y[:Y.shape[0]//2,:Y.shape[1]//2:]
+    H = Y[Y.shape[0]//2:,Y.shape[1]//2:]
 
     AE = RecMatMult(A,E)
     BG = RecMatMult(B,G)
@@ -51,30 +51,27 @@ def RecMatMult(X,Y):
     DG = RecMatMult(D,G)
     CF = RecMatMult(C,F)
     DH = RecMatMult(D,H)
-
-    Z[:X.shape[0]//2,:Y.shape[1]//2] = AE + BG
-    Z[:X.shape[0]//2,Y.shape[1]//2:] = AF +BH
-    Z[X.shape[0]//2:,:Y.shape[1]//2] = CE + DG
-    Z[:X.shape[0]//2,:X.shape[1]//2:] = CF + DH
-
-
-
+    Z[:X.shape[0]//2,:Y.shape[1]//2] =  AE + BG
+    Z[:X.shape[0]//2,Y.shape[1]//2:] =  AF + BH
+    Z[X.shape[0]//2:,:Y.shape[1]//2] =  CE + DG
+    Z[X.shape[0]//2:,Y.shape[1]//2:] = CF + DH
     return Z 
 # now test the VecDot function
 a = np.array([1,2,3])
 b = np.array([4,5,6])
-#print(np.dot(a,b))
-#print(VecDot(a,b)) 
+
 assert VecDot(a,b) == np.dot(a,b)
 
 # now test the MatMul function on square matrices 2x2
-A = np.array([[1,2],[3,4]])
-B = np.array([[5,6],[7,8]])
-print(np.matmul(A,B))
-print(MatMul(A,B))
-print(RecMatMult(A,B))
-# now test the MatMul function on non square matrices 2x3 and 3x2
-A = np.array([[1,2,3],[4,5,6]])
-B = np.array([[7,8],[9,10],[11,12]])
-#print(np.matmul(A,B))
-#print(MatMul(A,B))
+X  = np.array([[1,2],[3,4]])
+Y  = np.array([[5,6],[7,8]])
+#print(np.matmul(X,Y))
+#print(MatMul(X,Y))
+#print(RecMatMult(X,Y))
+
+# now test the matmul function on square matrices 4x4
+
+X = np.float32(np.random.randint(0,10,(16,16)))
+Y = np.float32(np.random.randint(0,10,(16,16)))
+# compare element wise matrix members and assert that they are equal
+assert np.allclose(np.matmul(X,Y),MatMul(X,Y))
