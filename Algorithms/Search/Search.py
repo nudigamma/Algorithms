@@ -1,19 +1,65 @@
 import numpy as np
 import platform
 import sys
+import os 
+
+from Algorithms.Sort.Sort import MergeSort
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
-os_type = platform.system()
-if os_type == 'Windows':
-    sys.path.insert(0, r'c:\\source\\Algorithms\\')
-    sys.path.insert(0, r'c:\\source\\Algorithms\\DataStructures\\')
-elif os_type == 'Linux':
-    sys.path.insert(0, r'/mnt/d/source/Algorithms/')
-    sys.path.insert(0, r'/mnt/d/source/Algorithms/DataStructures')  
 
-#import Utils.RandomDataGenerator as rnd
+def closestPairBruteForce1D(array):
+    '''Find the closess Pair of points in a 1D array '''
+    if len(array) == 0 or len(array) == 1:
+        raise ValueError("input array needs to have more than one element")
+    
+    minDistance = np.inf
 
 
+    min_p1, min_p2 = None, None
+    minDistance = np.inf
+    min_p1, min_p2 = ()
+    # 1D array meaning it doesn't have y coordinate. 
+    for x in range(len(array)):
+        # we find the squared distance be
+        for next_element in range(x,len(array)):
+                d_2= (array[next_element] - array[x])**2 
+                if  d_2 < minDistance:
+                    minDistance = d_2
+                    min_p1, min_p2 =  array[x], array[next_element]
+
+    return min_p1,min_p2
+
+def closestPoint1D(array):
+    ''' docstring for closestPoint1D'''
+    
+    '''Find the closess Pair of points in a 1D array
+    Args:
+        array: a numpy array of integers
+    Returns:
+        a tuple of two integers
+    Raises:
+        ValueError: if the input array has less than two elements
+    '''
+    
+    if len(array) == 0 or len(array) == 1:
+        raise ValueError("input array needs to have more than one element")
+    #sort the array
+    array = MergeSort(array)
+    minDistance = np.inf
+    min_p1, min_p2 = None, None
+    for x in range(len(array)-1):
+        d_2= (array[x+1] - array[x])**2 
+        if  d_2 < minDistance:
+            minDistance = d_2
+            min_p1, min_p2 =  array[x], array[x+1]
+    return min_p1,min_p2
+
+
+
+
+    
+    pass 
 def SecondLargest(array):
     '''This function finds the second largest element in an array'''
     '''array is a numpy array of integers'''

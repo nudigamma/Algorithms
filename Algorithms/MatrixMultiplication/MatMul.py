@@ -93,24 +93,8 @@ def strassenRecMat(X,Y):
     Z[:X.shape[0]//2,:Y.shape[1]//2] =  P5 + P4 - P2 + P6
     Z[:X.shape[0]//2,Y.shape[1]//2:] =  P1 + P2
     Z[X.shape[0]//2:,:Y.shape[1]//2] =  P3 + P4
-    Z[X.shape[0]//2:,Y.shape[1]//2:] = P1 + P5 - P3 - P7
+    Z[X.shape[0]//2:,Y.shape[1]//2:] =  P1 + P5 - P3 - P7
 
     return Z
 
-assert VecDot(a,b) == np.dot(a,b)
 
-# now test the MatMul function on square matrices 2x2
-X  = np.array([[1,2],[3,4]])
-Y  = np.array([[5,6],[7,8]])
-#print(np.matmul(X,Y))
-#print(MatMul(X,Y))
-#print(RecMatMult(X,Y))
-
-# now test the matmul function on square matrices 4x4
-
-X = np.float32(np.random.randint(0,10,(16,16)))
-Y = np.float32(np.random.randint(0,10,(16,16)))
-# compare element wise matrix members and assert that they are equal
-assert np.allclose(np.matmul(X,Y),MatMul(X,Y))
-assert np.allclose(np.matmul(X,Y),RecMatMult(X,Y))
-assert np.allclose(np.matmul(X,Y),strassenRecMat(X,Y))
