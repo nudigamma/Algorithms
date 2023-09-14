@@ -14,8 +14,6 @@ def closestPairBruteForce1D(array):
         raise ValueError("input array needs to have more than one element")
     
     minDistance = np.inf
-
-
     min_p1, min_p2 = None, None
     minDistance = np.inf
     min_p1, min_p2 = ()
@@ -58,8 +56,55 @@ def closestPoint1D(array):
 
 
 
+def distance_squared(p1,p2):
+    #find the 2D distance between two points
+    return (p1[0] - p2[0])**2 + (p1[1] - p2[1])**2
+
+
+def FindclosestPair(ArrayOfPoints):
+    '''This function finds the closest pair using the divide and conquer algorithm'''
+    if len(ArrayOfPoints) == 0 or len(ArrayOfPoints) == 1:
+        raise ValueError("input array needs to have more than one element")
+    if len(ArrayOfPoints) == 2:
+        return ArrayOfPoints[0],ArrayOfPoints[1]
     
-    pass 
+    #sort the array according to x coordinate
+    ArrayOfPointsX = sorted(ArrayOfPoints, key=lambda x: x[0]) # assuming using mergesort   
+    ArrayOfPointsY = sorted(ArrayOfPoints, key=lambda x: x[1]) # assuming using mergesort
+    #divide the array into two halves
+        #find the closest pair in the left half
+    l1, l2 = closestPair(Lx,Ly)
+
+
+def closestPair(SortedInX,SortedInY):
+    '''Find the closess Pair of points in a 2D array '''
+    # SortedInX will have at least three elements because of the findClosestPair condition on input 
+    if len(SortedInX) <= 3: # find the smallest distance between the three points
+        minDistance = np.inf
+        min_p1, min_p2 = None, None
+        for x in range(len(SortedInX)-1):
+            for next_element in range(x,len(SortedInX)):
+                d_2= (SortedInX[next_element][0] - SortedInX[x][0])**2 + (SortedInX[next_element][1] - SortedInX[x][1])**2
+                if  d_2 < minDistance:
+                    minDistance = d_2
+                    min_p1, min_p2 =  SortedInX[x], SortedInX[next_element]
+        return min_p1,min_p2
+    #no need for else condition because if will return
+    #divide the SortedInX into two halves
+    Lx = SortedInX[0:len(SortedInX)//2]
+    Rx = SortedInX[len(SortedInX)//2:]
+    #divide the SortedInY into two halves
+    Ly = SortedInY[0:len(SortedInY)//2]
+    Ry = SortedInY[len(SortedInY)//2:]
+    #find the closest pair in the left half
+    l1, l2 = closestPair(Lx,Ly)
+    #find the closest pair in the right half
+    r1, r2 = closestPair(Rx,Ry)
+
+
+        
+
+
 def SecondLargest(array):
     '''This function finds the second largest element in an array'''
     '''array is a numpy array of integers'''
