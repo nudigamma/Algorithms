@@ -3,18 +3,9 @@ import platform
 import sys
 import os 
 
+from Algorithms.Sort.Sort import MergeSort
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-import sys
-import os
-
-# Get the current working directory
-cwd = os.getcwd()
-
-# Append the path to your module to the current working directory
-module_path = os.path.join(cwd, 'Algorithms')
-sys.path.append(module_path)
-
-from Sort.Sort import MergeSort
 
 
 def closestPairBruteForce1D(array):
@@ -62,6 +53,7 @@ def closestPoint1D(array):
             min_p1, min_p2 =  array[x], array[x+1]
     return min_p1,min_p2
 
+
 def closestDistance2DBruteForce(array):
     minDistance = np.inf
     if len(array) == 0 or len(array) == 1:
@@ -82,8 +74,6 @@ def closestDistance2DBruteForce(array):
     return min_p1,min_p2
 
 
-
-<<<<<<< HEAD
 def distance_squared(p1,p2):
     #find the 2D distance between two points
     return (p1[0] - p2[0])**2 + (p1[1] - p2[1])**2
@@ -112,7 +102,8 @@ def closestPair(SortedInX,SortedInY):
         min_p1, min_p2 = None, None
         for x in range(len(SortedInX)-1):
             for next_element in range(x,len(SortedInX)):
-                d_2= (SortedInX[next_element][0] - SortedInX[x][0])**2 + (SortedInX[next_element][1] - SortedInX[x][1])**2
+                #find the squared distance between two points
+                d_2= distance_squared(SortedInX[x],SortedInX[next_element])
                 if  d_2 < minDistance:
                     minDistance = d_2
                     min_p1, min_p2 =  SortedInX[x], SortedInX[next_element]
@@ -128,14 +119,22 @@ def closestPair(SortedInX,SortedInY):
     l1, l2 = closestPair(Lx,Ly)
     #find the closest pair in the right half
     r1, r2 = closestPair(Rx,Ry)
+    d1 = distance_squared(l1,l2)
+    d2 = distance_squared(r1,r2)
+    delta = min(d1,d2)
+    #find the closest pair that has one point in the left half and one point in the right half
+    s1,s2 = closestSplitPair(SortedInX,SortedInY,delta)
+    #return the closest pair
+    d3 = distance_squared(s1,s2)
+    return min(min(d1,d2),d3)
 
 
-        
+
+def closesSplitPair(SortedInX,SortedInY,delta):
+    pass
+            
 
 
-=======
- 
->>>>>>> c6498a8629e578d1eb2f390cce54c1239b984269
 def SecondLargest(array):
     '''This function finds the second largest element in an array'''
     '''array is a numpy array of integers'''
@@ -190,13 +189,3 @@ def BinarySearch(array, key):
         else:
             return mid
     return -1
-
-def main():
-
-    test_array2_2D  = np.array([[9,2.5],[1,4],[5.5,-1],[4,3],[6,7],[5,11]])
-    #2D closest pair
-    print(closestDistance2DBruteForce(test_array2_2D))
-
-
-if __name__ == "__main__":
-    main()
