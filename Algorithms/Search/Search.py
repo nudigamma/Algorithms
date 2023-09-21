@@ -184,7 +184,7 @@ def FindclosestPair(ArrayOfPoints):
     #sort the array according to x coordinate
     
     PointsX = sorted(ArrayOfPoints, key=lambda x: x[0]) 
-    PointsY = sorted(ArrayOfPoints, key=lambda x :x[1])
+    PointsY = sorted(PointsX, key=lambda x :x[1])
     
     #divide the array into two halves
     #find the closest pair in the left half
@@ -206,10 +206,11 @@ def closestPair(SortedInX,SortedInY):
     Lx = SortedInX[0:len(SortedInX)//2]
     Rx = SortedInX[len(SortedInX)//2:]
     #Ly is lx sorted according to y coordinate
-    Ly = sorted(Lx,key=lambda x:x[1])
+    #Ly = sorted(Lx,key=lambda x:x[1])
+    Ly = SortedInY[0:len(SortedInY)//2]
     #Ry is rx sorted according to y coordinate
-    Ry = sorted(Rx,key=lambda x:x[1])
-
+    #Ry = sorted(Rx,key=lambda x:x[1])
+    Ry = SortedInY[len(SortedInY)//2:]
     #find the closest pair in the left half
     l1, l2 = closestPair(Lx,Ly)
     #find the closest pair in the right half
@@ -237,7 +238,7 @@ def closestPair(SortedInX,SortedInY):
 
 def closestSplitPair(SortedInX, SortedInY, delta):
     # Find the middle point, it should be the last point in the left half
-    middlePoint = SortedInX[len(SortedInX) // 2][0]
+    middlePoint = SortedInX[len(SortedInX) // 2-1][0]
     print(f"middlePoint = {middlePoint}")
     
     # Find the points that belong to Sy which are between middlePoint - delta and middlePoint + delta
