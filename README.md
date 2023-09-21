@@ -11,19 +11,25 @@ This is a learning journey for me. The algorithms and data structures below are 
 
 ### Search
 [Binary Search](Algorithms/Search/Search.py)  
-[Second Largest](Algorithms/Search/Search.py)  
+[Second Largest](Algorithms/Search/Search.py)
+[Closest Pair](Algorithms/Search/Search.py)
 
-### Misc
+## Linear Algera
+### Matrix Multiplications 
+[Strassen's Matrix Multiplication](Algorithms/MatrixMultiplication/MatMul.py)
+
+## Data Structures
+### Lists
+[Simple Linked List](DataStructures/List/LinkedList.py)  
+[Double Linked List](DataStructures/Lists/DoubeLinkedList.py)
+### Graphs 
+[Union Find](DataStructures/Graphs/UnionFind/UnionFind.py)
+
+## Misc
 [Recursive Multiplication](Algorithms/RecursiveIntegerMultiplication/RecursiveIntegerMultiplication.py)  
 [Karatsuba Multiplication](Algorithms/RecursiveIntegerMultiplication/RecursiveIntegerMultiplication.py)  
 [ThreeSum](Algorithms/NSum/ThreeSum.py)  
 [Count Inversions](Algorithms/CountInversions/CountInversions.py)
-
-
-## Data Structures
-[Simple Linked List](DataStructures/List/LinkedList.py)  
-[Double Linked List](DataStructures/Lists/DoubeLinkedList.py)   
-[Union Find](DataStructures/Graphs/UnionFind/UnionFind.py)
 ## Appendices 
 ### 
 
