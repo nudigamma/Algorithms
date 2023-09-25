@@ -321,3 +321,23 @@ def BinarySearch(array, key):
         else:
             return mid
     return -1
+
+def BinarySearchRecursive(array, key):
+
+    if array.shape[0] == 0:
+        return -1
+    if array.shape[0] == 1:
+        if array[0] == key:
+            return 0
+        else:
+            return -1
+    
+    mid = array.shape[0]//2
+    if array[mid] == key:
+        return mid
+    elif array[mid] > key:
+        return BinarySearchRecursive(array[0:mid],key)
+    else:
+        return BinarySearchRecursive(array[mid+1:],key)
+    
+    
