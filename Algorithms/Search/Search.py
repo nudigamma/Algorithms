@@ -2,9 +2,9 @@ import numpy as np
 import platform
 import sys
 import os 
-
-from Algorithms.Sort.Sort import MergeSort
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+
 
 
 
@@ -76,15 +76,6 @@ def closestDistance2DBruteForce(array):
 def distance_squared(p1,p2):
     #find the 2D distance between two points
     return (p1[0] - p2[0])**2 + (p1[1] - p2[1])**2
-
-
-import numpy as np
-import platform
-import sys
-import os 
-
-from Algorithms.Sort.Sort import MergeSort
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 def closestPairBruteForce1D(array):
     pass
@@ -303,7 +294,7 @@ def SecondLargest(array):
         
         return np.array([largest,secondLargest])
     
-def BinarySearch(array, key):
+def BinarySearchIterative(array, key):
     '''perform binary search on a sorted array'''
     '''array is a numpy array of integers'''
     '''key is an integer'''
@@ -322,22 +313,42 @@ def BinarySearch(array, key):
             return mid
     return -1
 
-def BinarySearchRecursive(array, key):
 
-    if array.shape[0] == 0:
-        return -1
-    if array.shape[0] == 1:
-        if array[0] == key:
-            return 0
-        else:
-            return -1
+def BinarySearch(array,key):
     
-    mid = array.shape[0]//2
+    lo = 0 
+    high = len(array) -1
+    index = BinarySearchRecursive(array,key,lo,high)
+
+    return index
+
+def BinarySearchRecursive(array, key, lo, high):
+    # Base condition if key not found
+    if lo > high:
+        return -1
+
+    mid = (lo + high) // 2
+
+    # If key is found at mid
     if array[mid] == key:
         return mid
-    elif array[mid] > key:
-        return BinarySearchRecursive(array[0:mid],key)
-    else:
-        return BinarySearchRecursive(array[mid+1:],key)
+     
+    # If key is greater than mid, search the right half
+    if key > array[mid]:
+        return BinarySearchRecursive(array, key, mid + 1, high)
     
+    # Else, search the left half
+    return BinarySearchRecursive(array, key, lo, mid - 1)
     
+
+def main():
+
+    array = range(0,10)
+    print(f"array = {array}")
+    key = 7
+    print(f"BinarySearch(array,{key}) = {BinarySearchIterative(np.array(array),key)}")
+    #test RecursiveBinarySearch
+    print(f"BinarySearchRecursive(array,{key}) = {BinarySearch(np.array(array),key)}")
+
+if __name__ == '__main__':
+    main()
