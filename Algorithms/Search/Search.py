@@ -324,6 +324,7 @@ def BinarySearch(array,key):
 
 def BinarySearchRecursive(array, key, lo, high):
     # Base condition if key not found
+    
     if lo > high:
         return -1
 
@@ -341,14 +342,3 @@ def BinarySearchRecursive(array, key, lo, high):
     return BinarySearchRecursive(array, key, lo, mid - 1)
     
 
-def main():
-
-    array = range(0,10)
-    print(f"array = {array}")
-    key = 7
-    print(f"BinarySearch(array,{key}) = {BinarySearchIterative(np.array(array),key)}")
-    #test RecursiveBinarySearch
-    print(f"BinarySearchRecursive(array,{key}) = {BinarySearch(np.array(array),key)}")
-
-if __name__ == '__main__':
-    main()
