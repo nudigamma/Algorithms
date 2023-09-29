@@ -10,11 +10,11 @@ This is a learning journey for me. The algorithms and data structures below are 
 [Merge Sort](Algorithms/Sort/Sort.py)    
 
 ### Search
-[Binary Search](Algorithms/Search/Search.py)  
+[Binary Search, Recursion and Iteration](Algorithms/Search/Search.py)  
 [Second Largest](Algorithms/Search/Search.py)
 [Closest Pair](Algorithms/Search/Search.py)
 
-## Linear Algera
+## Linear Algebra
 ### Matrix Multiplications 
 [Strassen's Matrix Multiplication](Algorithms/MatrixMultiplication/MatMul.py)
 
