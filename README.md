@@ -11,7 +11,7 @@ This is a learning journey for me. The algorithms and data structures below are 
 
 ### Search
 [Binary Search, Recursion and Iteration](Algorithms/Search/Search.py)  
-[Second Largest](Algorithms/Search/Search.py)
+[Second Largest](Algorithms/Search/Search.py)  
 [Closest Pair](Algorithms/Search/Search.py)
 
 ## Linear Algebra
