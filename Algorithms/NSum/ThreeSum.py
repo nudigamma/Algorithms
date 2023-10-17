@@ -3,15 +3,21 @@ import numpy as np
 import os 
 import sys
 import platform as pl
-if pl.system() == 'Windows':
-    sys.path.insert(0,os.path.join('D:\\','source','Algorithms','Algorithms','Sort'))
-    sys.path.insert(0,os.path.join('D:\\','source','Algorithms','Algorithms','Search'))
-else:
-    sys.path.insert(0,os.path.join(r'/mnt/d/source/Algorithms/Algorithms/Sort'))
-    sys.path.insert(0,os.path.join(r'/mnt/d/source/Algorithms/Algorithms/Search'))
-
 
     
+thisscripterdir = os.path.dirname(os.path.abspath(__file__))
+dirs = thisscripterdir.split(os.sep)
+dirs.pop()
+dirs.append("Sort")
+thisscripterdir = os.sep.join(dirs)
+sys.path.append(thisscripterdir)
+dirs.pop()
+dirs.append("Search")
+thisscripterdir = os.sep.join(dirs)
+sys.path.append(thisscripterdir)
+
+
+
 
 from Sort import MergeSort
 from Search import BinarySearch
@@ -23,11 +29,8 @@ def ThreeSumBruteForce(inputArray):
 
     count = 0
     for i in np.arange(inputArray.size):
-        
         for j  in np.arange(i+1,inputArray.size):
-             
             for z in np.arange(j+1,inputArray.size):
-                
                 if inputArray[i] + inputArray[j] + inputArray[z] == 0:
                     count +=1
 
