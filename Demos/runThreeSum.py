@@ -5,10 +5,16 @@ import sys
 import numpy as np
 import platform as pl
 
-if pl.system() == "Windows":
-    sys.path.insert(0, r'..\Algorithms\NSum')
-else:
-    sys.path.insert(0, r'../Algorithms/NSum')
+
+thisscripterdir = os.path.dirname(os.path.abspath(__file__))
+dirs = thisscripterdir.split(os.sep)
+dirs.pop()
+dirs.append("Algorithms")
+dirs.append("Nsum")
+
+thisscripterdir = os.sep.join(dirs)
+sys.path.append(thisscripterdir)
+
 
 from ThreeSum import ThreeSumBruteForce, ThreeSumQuick
 
