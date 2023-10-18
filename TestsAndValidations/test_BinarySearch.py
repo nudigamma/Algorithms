@@ -1,11 +1,18 @@
 '''This program tests the BinarySearch and RecursiveBinarySearc function in Algorithms/Search/Search.py '''
 import unittest
 #import the binarysearch function from ../Algorithms/Search/Search.py add the directory to the path
+import os
+cwd_of_script = os.path.dirname(os.path.realpath(__file__))
+dirs = cwd_of_script.split('/')
+dirs.pop()
+dirs.append("Algorithms")
+dirs.append("Search")
+cwd_of_script = '/'.join(dirs)
 import sys
-sys.path.append('../')
+sys.path.append(cwd_of_script)
 
-import sys
-sys.path.append('/home/bandapear/Documents/source/Algorithms_and_Data_Structures/Algorithms/Search')
+
+
 from Search import BinarySearch, BinarySearchRecursive
 
 class TestBinarySearch(unittest.TestCase):
