@@ -3,20 +3,20 @@ import matplotlib.pyplot as plt
 import os
 import sys 
 import numpy as np
-import platform as pl
+
 
 
 thisscripterdir = os.path.dirname(os.path.abspath(__file__))
 dirs = thisscripterdir.split(os.sep)
 dirs.pop()
 dirs.append("Algorithms")
-dirs.append("Nsum")
+dirs.append("Search")
 
 thisscripterdir = os.sep.join(dirs)
 sys.path.append(thisscripterdir)
 
 
-from ThreeSum import ThreeSumBruteForce, ThreeSumQuick
+from Search import ThreeSumBruteForce, ThreeSumQuick
 
 def main():
     '''reads in the file and stores the values in an array'''
