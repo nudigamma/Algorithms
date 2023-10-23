@@ -5,13 +5,9 @@ import os
 
 #Include Sort 
 file_path = os.path.dirname(os.path.abspath(__file__))
-dirs = file_path.split(os.sep)
-dirs.pop()
-dirs.append("Sort")
-sortdir = os.sep.join(dirs)
-sys.path.append(sortdir)
-##
 
+sys.path.append(file_path)
+##
 from Sort import MergeSort
 
 def closestPairBruteForce1D(array):
@@ -352,15 +348,16 @@ def ThreeSumBruteForce(inputArray):
     '''this function implements the three sum algorithm using the brute force method'''
     '''inputArray is a numpy array of integers'''
     '''this function returns the number of triplets that sum to zero'''
-
+    triplets = []
     count = 0
     for i in np.arange(inputArray.size):
         for j  in np.arange(i+1,inputArray.size):
             for z in np.arange(j+1,inputArray.size):
                 if inputArray[i] + inputArray[j] + inputArray[z] == 0:
                     count +=1
+                    triplets.append([inputArray[i],inputArray[j],inputArray[z]])
 
-    return count
+    return count,triplets
 
 def ThreeSumQuick(inputArray,SortFunction = MergeSort):
     '''this function implements the three sum algorithm using the binary search and sort'''
@@ -370,8 +367,13 @@ def ThreeSumQuick(inputArray,SortFunction = MergeSort):
 
     sortedArray = SortFunction(inputArray)
     count = 0
+    triplets = []
     for i in np.arange(sortedArray.size):
         for j in np.arange(i+1,sortedArray.size):
             if BinarySearch(sortedArray,-sortedArray[i]-sortedArray[j]) > j:
                 count += 1
-    return count
+                triplets.append([sortedArray[i],sortedArray[j],-sortedArray[i]-sortedArray[j]])
+    return count, triplets
+#Todo: maybe the function ThreeSumQuick is working but can be written in a more pythonic way
+# maybe using the enumerate function and list comprehension
+
