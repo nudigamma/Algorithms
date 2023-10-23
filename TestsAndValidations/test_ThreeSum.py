@@ -39,7 +39,7 @@ class Test3Sum (unittest.TestCase):
                 data = np.loadtxt(file_path)
                 zeroSums, triplets= ThreeSumQuick(data)
                 assert(zeroSums == expected_results[index])
-                print("Test Passed")
+                print(f"Test Passed for {file[:2]} Integers")
         
 
 if __name__ == "__main__":
