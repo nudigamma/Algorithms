@@ -109,3 +109,25 @@ def MergeSort(array):
 
 ########################################## Quick Sort ######################################################
 
+def partition(array, l, r):
+    if l >= len(array) or r > len(array):
+        return -1
+    p = array[l]
+    i = l + 1
+
+    for j in range(l + 1, r):
+        if array[j] < p:
+            array[i], array[j] = array[j], array[i]
+            i += 1
+    array[l], array[i - 1] = array[i - 1], array[l]
+
+    return i - 1
+
+def QuickSort(array, l, r):
+    if l < r:
+        i = np.random.randint(l, r)
+        array[l], array[i] = array[i], array[l]
+        j = partition(array, l, r)
+        QuickSort(array, l, j)
+        QuickSort(array, j + 1, r)
+
