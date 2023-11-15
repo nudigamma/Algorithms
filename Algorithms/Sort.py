@@ -106,3 +106,6 @@ def MergeSort(array):
         Merge(left,right,merged)
         return merged
     
+
+########################################## Quick Sort ######################################################
+
