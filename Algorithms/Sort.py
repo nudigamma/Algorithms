@@ -109,25 +109,28 @@ def MergeSort(array):
 
 ########################################## Quick Sort ######################################################
 
-def partition(array, l, r):
-    if l >= len(array) or r > len(array):
+def partition(array, left, right):
+    if left >= right:
         return -1
-    p = array[l]
-    i = l + 1
+    pivot_value = array[left]
+    less_index= left + 1
 
-    for j in range(l + 1, r):
-        if array[j] < p:
-            array[i], array[j] = array[j], array[i]
-            i += 1
-    array[l], array[i - 1] = array[i - 1], array[l]
+    for greater_index in range(left + 1, right):
+        if array[greater_index] < pivot_value:
+            array[less_index], array[greater_index] = array[greater_index], array[less_index]
+            less_index+= 1
 
-    return i - 1
+    array[left], array[less_index- 1] = array[less_index- 1], array[left]
+    pivot_index = less_index- 1 
 
-def QuickSort(array, l, r):
-    if l < r:
-        i = np.random.randint(l, r)
-        array[l], array[i] = array[i], array[l]
-        j = partition(array, l, r)
-        QuickSort(array, l, j)
-        QuickSort(array, j + 1, r)
+    return pivot_index
+
+def QuickSort(array, left, right):
+    if left < right:
+        return
+    pivot_index = np.random.randint(left, right)
+    array[left], array[pivot_index] = array[pivot_index], array[left]
+    new_pivot_index = partition(array, left, right)
+    QuickSort(array, left, new_pivot_index)
+    QuickSort(array, new_pivot_index + 1, right)
 
