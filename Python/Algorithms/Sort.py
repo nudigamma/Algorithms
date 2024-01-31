@@ -113,20 +113,21 @@ def partition(array, left, right):
     if left >= right:
         return -1
     pivot_value = array[left]
-    less_index= left + 1
+    lesser_index= left + 1
 
     for greater_index in range(left + 1, right):
         if array[greater_index] < pivot_value:
-            array[less_index], array[greater_index] = array[greater_index], array[less_index]
-            less_index+= 1
+            array[lesser_index], array[greater_index] = array[greater_index], array[lesser_index]
+            lesser_index+= 1
 
-    array[left], array[less_index- 1] = array[less_index- 1], array[left]
-    pivot_index = less_index- 1 
+    pivot_index = lesser_index- 1 
+    array[left], array[pivot_index] = array[pivot_index], array[left]
+    
 
     return pivot_index
 
 def QuickSort(array, left, right):
-    if left < right:
+    if left >= right:
         return
     pivot_index = np.random.randint(left, right)
     array[left], array[pivot_index] = array[pivot_index], array[left]
