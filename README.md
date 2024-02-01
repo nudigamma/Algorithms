@@ -1,19 +1,19 @@
-# Python/Algorithms (Active and Work in Progress) 
+# Algorithms/Python/Algorithms (Active and Work in Progress) 
 This repo implements mainly the Algorithms and data structures discussed in Algorithms Illuminated (Rougharden, Standford ), Introduction to Algorithms ( Cormen at all  MIT), and Algorithms (Sedgewick, Princeton).
 
 This is a learning journey for me. The algorithms and data structures below are implemented. 
 
 ## Algorithms 
 ### Sort
-[Bubble Sort ( with cocktail party Optimization)](Python/Algorithms/Sort/Sort.py)  
-[Insertion Sort](Python/Algorithms/Sort/Sort.py)    
-[Merge Sort](Python/Algorithms/Sort/Sort.py)
-[Quick Sort](Python/Algorithms/Sort/Sort.py)
+[Bubble Sort ( with cocktail party Optimization)](Algorithms/Python/Algorithms/Sort/Sort.py)  
+[Insertion Sort](Algorithms/Python/Algorithms/Sort/Sort.py)    
+[Merge Sort](Algorithms/Python/Algorithms/Sort/Sort.py)
+[Quick Sort](Algorithms/Python/Algorithms/Sort/Sort.py)
 
 ### Search
-[Binary Search, Recursion and Iteration](Python/Algorithms/Search/Search.py)  
-[Second Largest](Python/Algorithms/Search/Search.py)  
-[Closest Pair](PythonAlgorithms/Search/Search.py)
+[Binary Search, Recursion and Iteration](Algorithms/Python/Algorithms/Search/Search.py)  
+[Second Largest](Algorithms/Python/Algorithms/Search/Search.py)  
+[Closest Pair](Algorithms/PythonAlgorithms/Search/Search.py)
 
 ## Linear Algebra
 ### Matrix Multiplications 
@@ -21,16 +21,16 @@ This is a learning journey for me. The algorithms and data structures below are 
 
 ## Data Structures
 ### Lists
-[Simple Linked List](Python/DataStructures/List/LinkedList.py)  
-[Double Linked List](Python/DataStructures/Lists/DoubeLinkedList.py)
+[Simple Linked List](Algorithms/Python/DataStructures/List/LinkedList.py)  
+[Double Linked List](Algorithms/Python/DataStructures/Lists/DoubeLinkedList.py)
 ### Graphs 
-[Union Find](Python/DataStructures/Graphs/UnionFind/UnionFind.py)
+[Union Find](Algorithms/Python/DataStructures/Graphs/UnionFind/UnionFind.py)
 
 ## Misc
-[Recursive Multiplication](Python/Algorithms/RecursiveIntegerMultiplication/RecursiveIntegerMultiplication.py)  
-[Karatsuba Multiplication](Python/Algorithms/RecursiveIntegerMultiplication/RecursiveIntegerMultiplication.py)  
-[ThreeSum](Python/Algorithms/NSum/ThreeSum.py)  
-[Count Inversions](Python/Algorithms/CountInversions/CountInversions.py)
+[Recursive Multiplication](Algorithms/Python/Algorithms/RecursiveIntegerMultiplication/RecursiveIntegerMultiplication.py)  
+[Karatsuba Multiplication](Algorithms/Python/Algorithms/RecursiveIntegerMultiplication/RecursiveIntegerMultiplication.py)  
+[ThreeSum](Algorithms/Python/Algorithms/NSum/ThreeSum.py)  
+[Count Inversions](Algorithms/Python/Algorithms/CountInversions/CountInversions.py)
 ## Appendices 
 ### 
 
