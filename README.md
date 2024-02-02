@@ -1,4 +1,4 @@
-# Algorithms/Python/Algorithms (Active and Work in Progress) 
+# Python/Algorithms (Active and Work in Progress) 
 This repo implements mainly the Algorithms and data structures discussed in Algorithms Illuminated (Rougharden, Standford ), Introduction to Algorithms ( Cormen at all  MIT), and Algorithms (Sedgewick, Princeton).
 
 This is a learning journey for me. The algorithms and data structures below are implemented. 
