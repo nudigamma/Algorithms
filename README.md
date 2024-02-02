@@ -11,7 +11,7 @@ This is a learning journey for me. The algorithms and data structures below are 
 [Quick Sort](Python/Algorithms/Sort.py)
 
 ### Search
-[Binary Search, Recursion and Iteration](Python/Algorithms/Search/Search.py)    
+[Binary Search, Recursion and Iteration](Python/Algorithms/Search.py)    
 [Second Largest](Python/Algorithms/Search.py)  
 [Closest Pair](Python/Algorithms/Search.py)
 
