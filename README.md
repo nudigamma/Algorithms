@@ -7,7 +7,7 @@ This is a learning journey for me. The algorithms and data structures below are 
 ### Sort
 [Bubble Sort ( with cocktail party Optimization)](Python/Algorithms/Sort.py)  
 [Insertion Sort](Python/Algorithms/Sort.py)    
-[Merge Sort](Python/Algorithms/Sort.py) 
+[Merge Sort](Python/Algorithms/Sort.py)   
 [Quick Sort](Python/Algorithms/Sort.py)
 
 ### Search
