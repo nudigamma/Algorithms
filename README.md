@@ -22,7 +22,7 @@ This is a learning journey for me. The algorithms and data structures below are 
 ## Data Structures
 ### Lists
 [Simple Linked List](Python/DataStructures/LinkedList.py)  
-[Double Linked List](Python/DataStructures/DoubeLinkedList.py)
+[Double Linked List](Python/DataStructures/DoubleLinkedList.py)
 
 
 ## Misc
