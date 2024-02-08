@@ -126,7 +126,7 @@ def partition(array, left, right):
 
     return pivot_index
 
-def QuickSort(array, left, right):
+def QuickSort(array : np.array, left : int , right : int):
     if left >= right:
         return
     pivot_index = np.random.randint(left, right)

@@ -377,3 +377,29 @@ def ThreeSumQuick(inputArray,SortFunction = MergeSort):
 #Todo: maybe the function ThreeSumQuick is working but can be written in a more pythonic way
 # maybe using the enumerate function and list comprehension
 
+'''this is the implementation of the Rselect algorithm'''
+
+def partition(array : list,left : int , right : int ) -> int :
+    ''' this function partitions the array around a pivot value'''
+    if left >= right :
+        return -1
+    pivot_value = array[left]
+    lesser_index = left + 1
+    for index,value in enumerate(lesser_index,right):
+        if value < pivot_value:
+            array[lesser_index], array[index] = array[index], array[lesser_index]
+            lesser_index += 1
+    array[left], array[lesser_index-1] = array[lesser_index-1], array[left]
+    return lesser_index-1
+    
+def Rselect(array : list, left : int, right : int, ith : int) -> int :
+    '''this function returns the ith order statistic of the array'''
+    if left >= right:
+        return array[left]
+    pivot_index = partition(array,left,right)
+    if pivot_index == ith:
+        return array[pivot_index]
+    elif ith < pivot_index:
+        return Rselect(array,left,pivot_index,ith)
+    else:
+        return Rselect(array,pivot_index+1,right,ith-pivot_index-1)
