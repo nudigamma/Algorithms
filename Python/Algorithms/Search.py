@@ -385,7 +385,7 @@ def partition(array : list,left : int , right : int ) -> int :
         return -1
     pivot_value = array[left]
     lesser_index = left + 1
-    for index,value in enumerate(lesser_index,right):
+    for index,value in enumerate(array[lesser_index:right]):
         if value < pivot_value:
             array[lesser_index], array[index] = array[index], array[lesser_index]
             lesser_index += 1
@@ -394,12 +394,15 @@ def partition(array : list,left : int , right : int ) -> int :
     
 def Rselect(array : list, left : int, right : int, ith : int) -> int :
     '''this function returns the ith order statistic of the array'''
-    if left >= right:
-        return array[left]
-    pivot_index = partition(array,left,right)
-    if pivot_index == ith:
-        return array[pivot_index]
-    elif ith < pivot_index:
-        return Rselect(array,left,pivot_index,ith)
+    if len(array) == 1:
+        return array[1]
+    # we choose a random pivot
+    pivot_index = np.random.randint(left,right)
+    array[left], array[pivot_index] = array[pivot_index], array[left]
+    position = partition(array,left,right)
+    if position == ith:
+        return array[position]
+    elif ith < position:
+        return Rselect(array,left,position,ith)
     else:
-        return Rselect(array,pivot_index+1,right,ith-pivot_index-1)
+        return Rselect(array,pivot_index+1,right,ith-position-1)
