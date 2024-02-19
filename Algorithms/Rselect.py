@@ -1,34 +1,34 @@
-'''this is the implementation of the Rselect algorithm'''
 import random
-def partition(array : list,left : int , right : int ) -> int :
-    ''' this function partitions the array around a pivot value'''
-    if left >= right :
-        return -1
+
+def partition(array, left, right):
     pivot_value = array[left]
-    lesser_index = left + 1
-    for index,value in enumerate(array[left+1:right+1],left+1):
-        if value < pivot_value:
-            array[lesser_index], array[index] = array[index], array[lesser_index]
-            lesser_index += 1
-    array[left], array[lesser_index-1] = array[lesser_index-1], array[left]
-    return lesser_index-1
-    
+    i = left + 1
+    for j in range(left + 1, right + 1):
+        if array[j] < pivot_value:
+            array[i], array[j] = array[j], array[i]
+            i += 1
+    array[left], array[i - 1] = array[i - 1], array[left]
+    return i - 1
+
 def Rselect(array, left, right, ith):
-    if left >= right:
+    if left == right:
         return array[left]
 
-    p_pivot_index = random.randint(left, right)
-    array[left], array[p_pivot_index] = array[p_pivot_index], array[left]
+    pivot_index = random.randint(left, right)
+    array[left], array[pivot_index] = array[pivot_index], array[left]
+    new_pivot_index = partition(array, left, right)
 
-    pivot_index = partition(array, left, right)
-
-    if pivot_index == ith:
-        return array[pivot_index]
-    elif pivot_index > ith:
-        return Rselect(array, left, pivot_index - 1, ith)  # Corrected pivot_index
+    if new_pivot_index == ith:
+        return array[new_pivot_index]
+    elif new_pivot_index > ith:
+        return Rselect(array, left, new_pivot_index - 1, ith)
     else:
-        return Rselect(array, pivot_index + 1, right, ith - pivot_index -1)
+        return Rselect(array, new_pivot_index + 1, right, ith)
 
 if __name__ == '__main__':
-    array = [3,2,1,5,4,6,7,8,9,10]
-    print(Rselect(array,0,len(array)-1,3))
+    accumulator = 0
+    test_iteration_number = 100000
+    for _ in range(test_iteration_number):
+        array = [3, 2, 1, 5, 4, 6, 7, 8, 9, 10]
+        accumulator += Rselect(array, 0, len(array) - 1, 3)
+    print(accumulator / test_iteration_number)
