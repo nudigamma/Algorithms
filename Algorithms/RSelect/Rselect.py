@@ -5,7 +5,10 @@ import argparse
 parser = argparse.ArgumentParser(description='RSelect')
 parser.add_argument('file', type=str, help='file name')
 args = parser.parse_args()
-def partition(array):
+import random
+import argparse
+
+def partition(array : list[int]) -> int:
     pivot_value = array[0]
     i = 1
     for j in range(1, len(array)):
@@ -15,20 +18,18 @@ def partition(array):
     array[0], array[i - 1] = array[i - 1], array[0]
     return i - 1
 
-def Rselect(array, ith):
+def Rselect(array : list[int], ith : int) -> int:   
     if len(array) == 1:
         return array[0]
     pivot_index = random.randint(0, len(array) - 1)
     array[0], array[pivot_index] = array[pivot_index], array[0]
     j = partition(array)
-
     if j == ith:
         return array[j]
     elif j > ith:
         return Rselect(array[:j], ith)
     else:
         return Rselect(array[j + 1:], ith - j - 1)
-
 
 # test the algorithm 
 # read a text file that has an array with each element on a new line
