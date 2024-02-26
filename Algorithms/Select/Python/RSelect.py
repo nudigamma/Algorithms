@@ -1,12 +1,15 @@
 import random
 import argparse
+import heapq
 
 # pass the file name as an argument
 parser = argparse.ArgumentParser(description='RSelect')
+parser.add_argument('readFromFile', type=bool, help='Read from file or not')
 parser.add_argument('file', type=str, help='file name')
+parser.add_argument('ith', type=int, help='ith order statistic')
+
 args = parser.parse_args()
-import random
-import argparse
+
 
 def partition(array : list[int]) -> int:
     pivot_value = array[0]
@@ -34,14 +37,15 @@ def Rselect(array : list[int], ith : int) -> int:
 # test the algorithm 
 # read a text file that has an array with each element on a new line
 
-file_path = args.file
-with open(file_path) as f:
-    array = f.readlines()
-    array = [int(x.strip()) for x in array]
-print(array)
+if (args.readFromFile):
+    file_path = args.file
+    with open(file_path) as f:
+        array = f.readlines()
+        array = [int(x.strip()) for x in array]
+
 #  finding the ith order statistic of the array using heapq
-import heapq
-ith = 5
-print(heapq.nsmallest(ith,array)[-1])
+ith = args.ith 
+
 array1 = array.copy()
-print(Rselect(array1, ith - 1))
+assert( heapq.nsmallest(ith,array)[-1] == Rselect(array1, ith-1))
+print(Rselect(array, ith - 1))

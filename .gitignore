@@ -8,3 +8,6 @@ Sort/~$sertionSort.docx
 ~$eneral.docx
 
 .cosine
+*.out 
+# Ignore the build directory
+Algorithms/Select/Cpp/build/*
