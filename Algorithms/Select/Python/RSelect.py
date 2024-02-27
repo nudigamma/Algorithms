@@ -21,7 +21,7 @@ def partition(array : list[int]) -> int:
     array[0], array[i - 1] = array[i - 1], array[0]
     return i - 1
 
-def Rselect(array : list[int], ith : int) -> int:   
+def RSelect(array : list[int], ith : int) -> int:   
     if len(array) == 1:
         return array[0]
     pivot_index = random.randint(0, len(array) - 1) # randint int is inclusive
@@ -30,9 +30,9 @@ def Rselect(array : list[int], ith : int) -> int:
     if j == ith:
         return array[j]
     elif j > ith:
-        return Rselect(array[:j], ith) # skips the pivot element
+        return RSelect(array[:j], ith) # skips the pivot element
     else:
-        return Rselect(array[j + 1:], ith - j - 1) # skips the pivot element
+        return RSelect(array[j + 1:], ith - j - 1) # skips the pivot element
 
 # test the algorithm 
 # read a text file that has an array with each element on a new line
@@ -47,5 +47,5 @@ if (args.readFromFile):
 ith = args.ith 
 
 array1 = array.copy()
-assert( heapq.nsmallest(ith,array)[-1] == Rselect(array1, ith-1))
-print(Rselect(array, ith - 1))
+assert( heapq.nsmallest(ith,array)[-1] == RSelect(array1, ith-1))
+print(RSelect(array, ith - 1))

@@ -22,23 +22,21 @@ def partition(array : list[int]) -> int:
     array[0], array[i - 1] = array[i - 1], array[0]
     return i - 1
 
-def Dselect(array : list[int], ith : int) -> int:   
-    if len(array) == 1:
-        return array[0]
-    C = []
-    for h in range(0,len(array)//5):
-        if(len(array[h*5:(h+1)*5]) < 5):
-            C.append(statistics.median(array[h*5:(h+1)*5]))    
-    p = Dselect(C,len(C)//2)
+
+def DSelect(array, ith):
+    if len(array) <= 5:
+        return sorted(array)[ith]
+    C = [statistics.median(array[i:i+5]) for i in range(0, len(array), 5)]
+    p = DSelect(C, len(array) // 10)
     index_p = array.index(p)
     array[0], array[index_p] = array[index_p], array[0]
+    j = partition(array)
     if j == ith:
         return array[j]
     elif j > ith:
-        return Rselect(array[:j], ith) # skips the pivot element
+        return DSelect(array[:j], ith)
     else:
-        return Rselect(array[j + 1:], ith - j - 1) # skips the pivot element
-
+        return DSelect(array[j + 1:], ith - j - 1)
 # test the algorithm 
 # read a text file that has an array with each element on a new line
 
@@ -52,5 +50,5 @@ if (args.readFromFile):
 ith = args.ith 
 
 array1 = array.copy()
-assert( heapq.nsmallest(ith,array)[-1] == Rselect(array1, ith - 1))
-print(Rselect(array, ith - 1))
+assert( heapq.nsmallest(ith,array)[-1] == DSelect(array1, ith - 1))
+print(DSelect(array, ith - 1))
