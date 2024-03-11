@@ -16,7 +16,7 @@ This is a learning journey for me. The algorithms and data structures below are 
 [Closest Pair](Search/Search.py)
 
 ### Select
-[Random Select](Select/Python/RSelect.py)
+[Random Select](Select/Python/RSelect.py)  
 [Deterministic Select](Select/Python/DSelect.py)
 
 
