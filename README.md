@@ -11,13 +11,13 @@ This is a learning journey for me. The algorithms and data structures below are 
 [Quick Sort](Sort/Sort.py)
 
 ### Search
-[Binary Search, Recursion and Iteration](Python/Algorithms/Search.py)    
-[Second Largest](Python/Algorithms/Search.py)  
-[Closest Pair](Python/Algorithms/Search.py)
+[Binary Search, Recursion and Iteration](Search/Search.py)    
+[Second Largest](Search/Search.py)  
+[Closest Pair](Search/Search.py)
 
 ## Linear Algebra
 ### Matrix Multiplications 
-[Strassen's Matrix Multiplication](Python/Algorithms/MatMul.py)
+[Strassen's Matrix Multiplication](LinearAlgebra/MatMul.py)
 
 ## Data Structures
 ### Lists
