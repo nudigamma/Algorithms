@@ -5,10 +5,10 @@ This is a learning journey for me. The algorithms and data structures below are 
 
 
 ### Sort
-[Bubble Sort ( with cocktail party Optimization)](Python/Algorithms/Sort.py)  
-[Insertion Sort](Python/Algorithms/Sort.py)    
-[Merge Sort](Python/Algorithms/Sort.py)   
-[Quick Sort](Python/Algorithms/Sort.py)
+[Bubble Sort ( with cocktail party Optimization)](Sort/Sort.py)  
+[Insertion Sort](Sort/Sort.py)    
+[Merge Sort](Sort/Sort.py)   
+[Quick Sort](Sort/Sort.py)
 
 ### Search
 [Binary Search, Recursion and Iteration](Python/Algorithms/Search.py)    
