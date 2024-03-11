@@ -26,10 +26,10 @@ This is a learning journey for me. The algorithms and data structures below are 
 
 
 ## Misc
-[Recursive Multiplication](RecursiveIntegerMultiplication.py)  
-[Karatsuba Multiplication](RecursiveIntegerMultiplication.py)  
-[ThreeSum](Python/Algorithms/Search.py)  
-[Count Inversions](Python/Algorithms/CountInversions.py)
+[Recursive Multiplication](Misc/RecursiveIntegerMultiplication.py)  
+[Karatsuba Multiplication](Misc/RecursiveIntegerMultiplication.py)  
+[ThreeSum](Misc/Search.py)  
+[Count Inversions](Misc/CountInversions.py)
 ## Appendices 
 ### 
 
