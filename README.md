@@ -15,6 +15,11 @@ This is a learning journey for me. The algorithms and data structures below are 
 [Second Largest](Search/Search.py)  
 [Closest Pair](Search/Search.py)
 
+### Select
+[Random Select](Select/Python/RSelect.py)
+[Deterministic Select](Select/Python/DSelect.py)
+
+
 ## Linear Algebra
 ### Matrix Multiplications 
 [Strassen's Matrix Multiplication](LinearAlgebra/MatMul.py)
