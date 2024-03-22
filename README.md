@@ -1,35 +1,40 @@
-# Python/Algorithms (Active and Work in Progress) 
+
 This repo implements mainly the Algorithms and data structures discussed in Algorithms Illuminated (Rougharden, Standford ), Introduction to Algorithms ( Cormen at all  MIT), and Algorithms (Sedgewick, Princeton).
 
 This is a learning journey for me. The algorithms and data structures below are implemented. 
 
-## Algorithms 
+
 ### Sort
-[Bubble Sort ( with cocktail party Optimization)](Python/Algorithms/Sort.py)  
-[Insertion Sort](Python/Algorithms/Sort.py)    
-[Merge Sort](Python/Algorithms/Sort.py)   
-[Quick Sort](Python/Algorithms/Sort.py)
+[Bubble Sort ( with cocktail party Optimization)](Sort/Sort.py)  
+[Insertion Sort](Sort/Sort.py)    
+[Merge Sort](Sort/Sort.py)   
+[Quick Sort](Sort/Sort.py)
 
 ### Search
-[Binary Search, Recursion and Iteration](Python/Algorithms/Search.py)    
-[Second Largest](Python/Algorithms/Search.py)  
-[Closest Pair](Python/Algorithms/Search.py)
+[Binary Search, Recursion and Iteration](Search/Search.py)    
+[Second Largest](Search/Search.py)  
+[Closest Pair](Search/Search.py)
+
+### Select
+[Random Select](Select/Python/RSelect.py)  
+[Deterministic Select](Select/Python/DSelect.py)
+
 
 ## Linear Algebra
 ### Matrix Multiplications 
-[Strassen's Matrix Multiplication](Python/Algorithms/MatMul.py)
+[Strassen's Matrix Multiplication](LinearAlgebra/MatMul.py)
 
 ## Data Structures
 ### Lists
-[Simple Linked List](Python/DataStructures/LinkedList.py)  
-[Double Linked List](Python/DataStructures/DoubleLinkedList.py)
+[Simple Linked List](DataStructures/LinkedList.py)  
+[Double Linked List](DataStructures/DoubleLinkedList.py)
 
 
 ## Misc
-[Recursive Multiplication](Python/Algorithms/RecursiveIntegerMultiplication.py)  
-[Karatsuba Multiplication](Python/Algorithms/RecursiveIntegerMultiplication.py)  
-[ThreeSum](Python/Algorithms/Search.py)  
-[Count Inversions](Python/Algorithms/CountInversions.py)
+[Recursive Multiplication](Misc/RecursiveIntegerMultiplication.py)  
+[Karatsuba Multiplication](Misc/RecursiveIntegerMultiplication.py)  
+[ThreeSum](Misc/Search.py)  
+[Count Inversions](Misc/CountInversions.py)
 ## Appendices 
 ### 
 
