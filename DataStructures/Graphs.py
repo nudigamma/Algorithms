@@ -8,6 +8,7 @@ the vertices that are adjacent to the key vertex, no parallel edges are allowed'
 class Graph:
     def __init__(self):
         self.graph = {}
+
         
     def add_vertex(self, vertex : int ) -> None:
         if self.graph.get((str(vertex))) == None :
