@@ -6,19 +6,6 @@ import matplotlib.pyplot as plt
 small_graph = {'1': [2, 3], '2': [1, 3, 4], '3': [1, 2, 4], '4': [2, 3]}
 
 
-def plot_graph(small_graph : dict, title : str) -> None : 
-# Create a new graph
-    G = nx.Graph()
-# Add nodes and edges
-    for node, edges in small_graph.items():
-        G.add_node(node)
-        for edge in edges:
-            G.add_edge(node, str(edge))
-# Plot the graph
-    plt.figure(figsize=(5, 4))
-    nx.draw(G, with_labels=True, node_color='skyblue', node_size=700, edge_color='k', linewidths=1, font_size=15)
-    plt.title(title, fontsize=20)
-    plt.show()
 class Graph:
     '''this class implements a graph data structure using an adjacency list representation'''
     '''the graph is represented by a list of vertices and a list of edges
@@ -27,22 +14,52 @@ class Graph:
     def __init__(self):
         self.vertices = []
         self.edges = []
+    def add_vertex(self, vertex):
+        '''add a vertex to the graph'''
+        if vertex not in self.vertices:
+            self.vertices.append(vertex)
+    def add_edge(self, vertex1, vertex2):
+        if vertex1 in self.vertices and vertex2 in self.vertices:
+            if (vertex1, vertex2) not in self.edges and (vertex2, vertex1) not in self.edges:
+                self.edges.append((vertex1, vertex2))
+    def plot_graph(self, title : str) -> None : 
+        # Create a new graph
+        G = nx.Graph()
+    # Add nodes and edges
+        for node in self.vertices:
+            G.add_node(node)
+        for edge in self.edges:
+            G.add_edge(edge[0], edge[1])
+        plt.figure(figsize=(5, 4))
+        nx.draw(G, with_labels=True, node_color='skyblue', node_size=700, edge_color='k', linewidths=1, font_size=15)
+        plt.title(title, fontsize=20)
+        plt.show()
         
+    def print_nodes(self) -> None:
+        print('Vertices: ', self.vertices)
+    def print_edges(self) -> None:
+        print('Edges: ', self.edges)
+    def contract_edge(self, edge):
+        '''contract an edge in the graph'''
+        '''remove the edge from the list of edges and merge the two vertices into one'''
+        '''remove the self loop'''
+        '''update the list of edges'''
+        '''update the list of vertices'''
+        pass
 def small_test():
-    
-    small_graph = {'1':[2,3], '2':[1,3,4], '3':[1,2,4], '4':[2,3]}
-    edges = []
-    for node, connections in small_graph.items():
-        for connection in connections:
-            edge = (node, str(connection))
-            if edge not in edges and (str(connection), node) not in edges:
-                edges.append((node, str(connection)))
-            
-    print(edges)    
-        
-    #plot_graph(small_graph, 'Small Graph')
-    small_graph_1 = Graph()
-    
+    small_graph = Graph()
+    small_graph.add_vertex('1')
+    small_graph.add_vertex('2')
+    small_graph.add_vertex('3')
+    small_graph.add_vertex('4')
+    small_graph.add_edge('1', '2')
+    small_graph.add_edge('1', '3')
+    small_graph.add_edge('2', '3')
+    small_graph.add_edge('2', '4')
+    small_graph.add_edge('3', '4')
+    small_graph.plot_graph('Small Graph')
+    #small_graph.print_nodes()
+    #small_graph.print_edges()
     
     
 def main():
